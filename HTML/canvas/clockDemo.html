@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+</head>
+<body>
+    <canvas id="can">
+        当前浏览器不支持！
+    </canvas>
+<script>
+    
+    const c = document.getElementById("can");
+    const ctx = c.getContext("2d");
+    c.width = 400;
+    c.height = 400;　　　　　　　　　　　　　　　　　　　　　//画布大小
+
+    const x1 = 300;
+    const y1 = 300;　　　　　　　　　　　　　　　　　　　　　//时钟圆心位置
+    setInterval(function() {
+        ctx.clearRect(0, 0, 400, 400);
+        rtime(x1, y1);
+    },50)　　　　　　　　　　　　　　　　　　　　　　　　　　//让时钟走起来
+
+    function rtime(x, y) {
+        const da1 = new Date();
+        const h = parseInt(da1.getHours());
+        const m = parseInt(da1.getMinutes());
+        const s = parseInt(da1.getSeconds());　　　　　　　//获取系统时间
+
+        const h1 = (h * 30 - 90 + m / 2) * Math.PI / 180;
+        const m1 = (m * 6 - 90) * Math.PI / 180;
+        const s1 = (s * 6 - 90) * Math.PI / 180;　　　　　　//转化为函数所需要的弧度
+
+        ctx.beginPath();
+        ctx.lineWidth = 6;
+        ctx.arc(x, y, 70, 0, 2*Math.PI);
+        ctx.stroke();　　　　　　　　　　　　　　　　　　　//绘制表盘
+
+        ctx.lineWidth = 1;
+        ctx.font = "18px";
+        ctx.strokeText("12",x-9, y-50);
+        ctx.strokeText("6",x-3, y+60);
+        ctx.strokeText("9",x-60, y+5);
+        ctx.strokeText("3",x+55, y+5);　　　　　　　　　　　//绘制数字
+
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.lineCap="round";
+        ctx.moveTo(x,y);
+        ctx.arc(x, y, 35, h1, h1);
+        ctx.stroke();　　　　　　　　　　　　　　　　　　　//绘制时针
+
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.lineCap="round";
+        ctx.moveTo(x,y);
+        ctx.arc(x, y, 45, m1, m1);
+        ctx.stroke();　　　　　　　　　　　　　　　　　　　//绘制分针
+
+        ctx.beginPath();
+        ctx.lineWidth = 1;
+        ctx.lineCap="round";
+        ctx.moveTo(x,y);
+        ctx.arc(x, y, 55, s1, s1);
+        ctx.stroke();　　　　　　　　　　　　　　　　　　　//绘制秒针
+    }
+    </script>
+</body>
+</html>

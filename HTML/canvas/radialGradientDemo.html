@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8"> 
+		<title>径向渐变</title> 
+	</head>
+	<body>
+		<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+			您的浏览器不支持 HTML5 canvas 标签。
+		</canvas>
+		<script>
+			const c=document.getElementById("myCanvas");
+			const ctx=c.getContext("2d");
+			// Create gradient
+			const grd=ctx.createRadialGradient(75,50,5,90,60,100);
+			grd.addColorStop(0,"red");
+			grd.addColorStop(1,"white");
+			// Fill with gradient
+			ctx.fillStyle=grd;
+			ctx.fillRect(10,10,150,80);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex">
+		<meta name="viewport" content="width=device-width">
+		<title>canvas</title>
+		<style type="text/css">
+		  	*{
+		  		margin: 0;
+		  		padding: 0;
+		  	}
+
+			.container{
+				background: #abcdef;
+				display: inline-block;
+				font-size: 0;
+				position: relative;
+			}
+
+			.container:before{
+				content: "";
+				position: absolute;
+				left: 50px;
+				top: 0;
+				width: 1px;
+				height: 102px;
+				background: #fff;
+			}
+
+			.container:after{
+				content: "";
+				position: absolute;
+				left: 0px;
+				top: 50px;
+				width: 102px;
+				height: 1px;
+				background: #fff;
+			}
+
+			.myCanvas{
+				width: 100px;
+				height: 100px;
+				border: 0px solid #000;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<canvas class="myCanvas"></canvas>
+		</div>
+
+		<script>
+			const canvas = document.querySelector('.myCanvas');
+			const ctx = canvas.getContext('2d');
+			const cw = 100;
+			const ch = 100;
+			canvas.width = 100;
+			canvas.height = 100;
+			const percent = 0;
+			let points = {
+				x1 : 100,
+				y1 : 0,
+				x2 : 100,
+				y2 : 0
+			}
+			let speed = 1;
+			let aSpeed = 0.1;
+			ctx.moveTo(0,0);
+			ctx.strokeStyle = 'black';
+			ctx.strokeWidth= 1;
+			ctx.save();
+			const deg = Math.PI / 180;
+			
+			function start(type){
+				if(type === 'show'){
+					points = {
+						x1 : 100,
+						y1 : 0,
+						x2 : 100,
+						y2 : 0
+					}
+					aSpeed = .1;
+					speed = 1;
+				}else{
+					points = {
+						x1 : 50,
+						y1 : 0,
+						x2 : 100,
+						y2 : 50
+					}
+					aSpeed =  -.1;
+					speed = -1;
+				}
+				draw(points , type);
+			}
+				
+			function draw(points , type){
+				const disX = Math.floor(points.x2 - points.x1);
+				const disY = Math.floor(points.y2 - points.y1);
+				if(disY < 0 && type == 'hide'){
+					// console.log('改展开动画了');
+					ctx.clearRect(0,0,cw,ch);
+					setTimeout(function(){
+						start('show');
+					} , 2000)
+					return ;
+				}else if(disY > 50 && type == 'show'){
+					//console.log('改收起动画了');
+					setTimeout(function(){
+						start('hide');
+					} , 2000)
+					return ;
+				}
+				ctx.clearRect(0,0,cw,ch);
+				drawPageCorShow(points , disX , disY);
+				drawPageCor(points, disX , disY);
+				window.requestAnimationFrame(function(){
+					draw(points , type);
+				})
+			}
+				
+			function drawPageCorShow(points, disX , disY){
+				ctx.save();
+				ctx.beginPath();
+				//闭合三角形
+				ctx.moveTo(points.x1 , points.y1);
+				ctx.lineTo(points.x2 , points.y2);
+				ctx.lineTo(points.x2 , points.y1);
+				ctx.lineTo(points.x1 , points.y1);
+
+				ctx.closePath();
+				ctx.strokeStyle = "#080";
+				ctx.stroke();
+				
+				ctx.fillStyle = '#ff6600';
+				ctx.fill();
+				//重叠模式
+				ctx.globalCompositeOperation = 'source-atop';
+				
+				ctx.beginPath();
+				ctx.font = '14px Arial';
+				ctx.textAlign = 'center';
+				ctx.translate(78 , 22);
+				ctx.rotate(45 * deg);
+				ctx.fillStyle = '#fff';
+				ctx.fillText('NEW' , 0 , 0);
+				ctx.closePath();
+				ctx.restore();
+				
+			}
+				
+			function drawPageCor(points, disX , disY){
+				ctx.save();
+				ctx.beginPath();
+				//移動到位置 左上
+				ctx.moveTo(points.x1,points.y1);
+				//画第一个曲线
+				ctx.quadraticCurveTo(points.x1 + (disX/10),points.y1 + disY/10 ,(points.x1 + disX/10),points.y1 + disY/2);
+				//直线向下
+				ctx.lineTo(points.x1 + disX / 10 , points.y2 - (disY/5));
+				//半圆向右
+				ctx.arc(points.x1+disX/5,points.y2 - (disY/5),disY/10,deg*180 , deg*90,true);
+				// 直线向右
+				ctx.lineTo(points.x2 - disX/2 , points.y2 - (disY / 10))
+				//曲线向右
+				ctx.quadraticCurveTo(points.x2 -disX/10,points.y2 - (disY/10)  ,points.x2,points.y2 );
+				//闭合图形
+				ctx.lineTo(points.x1,points.y1);
+				
+				ctx.closePath();
+				
+				var gradient = ctx.createLinearGradient(points.x1 , points.y2 , points.x1 + (disX/2) , points.y1 + disY/2);
+				gradient.addColorStop(0 , '#ccc');
+				gradient.addColorStop(0.7 , '#111');
+				gradient.addColorStop(1 , '#000');
+				
+				ctx.fillStyle = gradient;
+				ctx.fill();
+				ctx.restore();
+				//更新速度位置
+				points.x1 -= speed;
+				points.y2 += speed;
+				speed += aSpeed;
+			}
+			start('show');
+		</script>
+	</body>
+</html>

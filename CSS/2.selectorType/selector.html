@@ -2,9 +2,6 @@
 <html>
 	<head>
 		<title>selector</title>
-		<!-- 引用外部样式表 -->
-		<link rel="stylesheet" type="text/css" href="css1.less" /> 
-		<!-- 内部（嵌套）样式表 -->
 		<style type="text/css">
 
 			/*通配选择器*/
@@ -31,10 +28,6 @@
 				padding: 5px;
 			}
 
-			a:link, a:visited {
-				color: white;
-				background: black;
-			}
 			p {
 				/*display: inline;*/
 				/*灰色*/
@@ -58,9 +51,11 @@
 			}*/
 			.urgent {
 				font-style: italic;
+				border: 1px solid red;
 			}
 			/*多类选择器*/
-			.urgent.warning {
+			/*顺序不限*/
+			span.urgent.warning {
 				background: silver;
 			}
 
@@ -98,25 +93,119 @@
 			}
 
 			/*部分属性选择器*/
+			/*头*/
 			[class~="cloudy"] {
 				color: aqua;
 				border: 1px solid red;
 			}
-
+			/*尾*/
 			[class^="li"] {
 				color: green;
 				border: 1px solid black;
 			}
+			/*包含*/
+			[class*="li"] {
+				color: green;
+				border: 1px solid black;
+			}
+			/*特定属性选择器*/
+			img[src|="figure"] {
+				border: 1px solid red;
+			}
 
+			/*后代选择器*/
+			h1 em {
+				color: gray;
+			}
+
+			/*子选择器*/
+			h1 > strong {
+				color: red;
+			}
+
+			/*兄弟选择器*/
+			h1 + p {
+				margin-top: 0;
+			}
+
+			/*伪类选择器*/
+			/*静态*/
+			a:link {
+				color: green;
+				font-size: 13px;
+			}
+			a:visited {
+				color: red;
+				text-decoration: line-through;
+				font-style: italic;
+				border: 1px solid blue;
+				font-size: 13px;
+			}
+			/*动态*/
+			a:hover {
+				color: orange;
+				font-size: 20px;
+			}
+			a:active {
+				color: violet;
+			}
+
+			input:focus {
+				background: silver;
+				font-weight: bold;
+			}
+
+			body *:hover {
+				background: yellow;
+			}
+
+			div p:first-child {
+				font-weight: bold;
+			}
+
+			div li:first-child {
+				text-transform: uppercase;
+			}
+
+			div a:link:hover {
+				color: red;
+			}
+			div a:visited:hover {
+				color: maroon;
+			}
+
+			/*伪元素选择器*/
+			#w h2:first-letter {
+				font-size: 200%;
+			}
+			/*首字母*/
+			#w p:first-letter {
+				color: red;
+			}
+			/*首行*/
+			#w p:first-line {
+				color: purple;
+			}
+			/*之前*/
+			#w1 h2:before {
+				content: "[[";
+				color: silver;
+			}
+			/*之后*/
+			#w1 h2:after {
+				content: "   The End.";
+				color: red;
+			}
 		</style>
 	</head>
 	<body>
-		<h1>Leaping Above The Water</h1>
-		<a href="" >this is a link1</a>
+		<h1>标题</h1>
+		<a href="" >已访问</a>
+		<a href="www" >未访问</a>
 		<p>This is a paragraph with <em>an inline element</em> within it .</p>
-		<p class="warning">This is a paragraph with <em>an inline element</em> within it .</p>
+		<p class="warning" >This is a paragraph with <em>an inline element</em> within it .</p>
 		
-		<p >This is a paragraph with <span class="urgent warning">an inline element</span> within it .</p>
+		<p >This is a paragraph with <span class="urgent warning">多类选择器</span> within it .</p>
 
 		<p id="success">This is a paragraph with <span class="warning">an inline element</span> within it .</p>
 
@@ -124,7 +213,7 @@
 		<h4 class="severe">Serenity</h4>
 		<h4 class="fancy">Fooling</h4>
 
-		<img id="scream" src="titlebg3.png" alt="The Scream" width="420" height="420">
+		<img id="scream" src="../../IMG/titlebg3.png" alt="The Scream" width="200" height="200">
 
 		<a href="" title="this is a link2">this is a link2</a>
 
@@ -145,7 +234,7 @@
 					<li>List item 1-3
 						<ol>
 							<li>List item 1-3-1</li>
-							<li>List item <em>1-3-2</em></li>
+							<li>List item <em>aaaa1-3-2</em></li>
 							<li>List item 1-3-3</li>
 						</ol>
 					</li>
@@ -153,5 +242,59 @@
 				</ol>
 			</li>
 		</ul>
+
+		<input type="text" name="">
+
+		<div>
+			<p>These ate the necessart steps:</p>
+			<ul>
+				<li>Insert key</li>
+				<li>Turn key <strong>clockwise</strong></li>
+				<li>Push accelerator</li>
+			</ul>
+			<p>Do <em>not</em> push the brake at the same time as the acceletrator.</p>
+		</div>
+
+		<div>
+			<a href="" >已访问</a>
+			<a href="www" >未访问</a>
+		</div>
+
+		<div id="w">
+			<h2>Test a aa </h2>
+			<p>
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+			</p>
+			<q>
+				道可道，非常道；
+				名可名，非常名
+			</q>
+		</div>
+		<div id="w1">
+			<h2>Test a aa </h2>
+			<p>
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+			</p>
+			<q>
+				道可道，非常道；
+				名可名，非常名
+			</q>
+		</div>
 	</body>
 </html>

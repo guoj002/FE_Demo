@@ -6,7 +6,7 @@
 
 			/*通配选择器*/
 			* {
-				color: block;
+				color: black;
 			}
 
 			/*元素选择器*/
@@ -17,7 +17,7 @@
 			}
 
 			/*分组选择器*/
-			h1, h2, h3 {
+			h1, h2, h5 {
 				color: maroon;
 				background: yellow;
 				/*background: yellow url(titlebg4.jpg) repeat-x;*/
@@ -36,7 +36,7 @@
 			em {
 				/*display: block;*/
 				/*银色*/
-				color: silver;
+				/*color: silver;*/
 			}
 
 			/*类选择器*/
@@ -196,6 +196,10 @@
 				content: "   The End.";
 				color: red;
 			}
+
+			h3#page-title {
+				color: red;
+			}
 		</style>
 	</head>
 	<body>
@@ -295,6 +299,14 @@
 				道可道，非常道；
 				名可名，非常名
 			</q>
+		</div>
+
+		<div id="w2">
+			<h3 id="page-title">道可道，非常道；名可名，非常名 <em>道可道，非常道；名可名，非常名</em></h3>
+			<p>
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+				道可道，非常道；名可名，非常名 道可道，非常道；名可名，非常名
+			</p>
 		</div>
 	</body>
 </html>

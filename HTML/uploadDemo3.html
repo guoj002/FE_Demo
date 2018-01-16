@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title></title>
-		<style>
+		<style type="text/css">
 			.upload-bar{
 			    width: 100%;
 			    /*height: 80px;*/
@@ -50,8 +50,29 @@
 			    cursor: not-allowed;
 			}
 		</style>
-		<script type="text/javascript">
-			//上传文件事件
+		
+	</head>
+	<body>
+		<!-- <input style={{visibility: 'hidden', display: 'none'}} id="uploadPic" disabled={uploadBtnDisable} type="file" onChange={this.onSelectFiles}/>
+        <label className={uploadBtnDisable ? styles['upload-btn-disable'] : styles['upload-btn']} htmlFor="uploadPic">
+            上传文件
+        </label> -->
+        <input style="visibility: hidden; display: none" id="uploadPic" type="file" onchange="onUpload();" />
+        <!-- 原生html用 for 属性   ，react中使用htmlFor属性！ -->
+        <label class='upload-btn' for="uploadPic">
+            上传文件
+        </label>
+
+        <input type="file" name="files" id="file_fujian" onchange="filefujianChange(this);" /> 
+
+        <script type="text/javascript">
+			onUpload = e => {
+				console.log('upload file');
+				console.log(e);
+				console.log(event);
+				console.log(event.target);
+				console.log(event.target.files[0]);
+			}
 		    onSelectFiles = e => {
 		        const that = this
 		        const file = event.target.files[0]
@@ -66,7 +87,6 @@
 		        this.ProgressAnimation()
 		        this.setState({uploadState: 0, checkResult: -1, uploadBtnDisable: true, subBtnDisable: true})
 		        //发送保存手动机会请求
-		        console.log('1')
 		        const s = setTimeout(function() {
 		            getJSON(URLS.GET_MANUAL_UPLOAD_TEMPLATE, formData)
 		            .then(data => {
@@ -81,21 +101,14 @@
 		                that.setState({uploadState: -1, checkResult: -1, uploadBtnDisable: false, subBtnDisable: true})
 		            })
 		        },500)
-		        console.log('2')
 		        this.clearInput()
 		    }
-			clearInput = _ => {
+		    clearInput = _ => {
 		        //清空input
 		        const uploadPic = document.querySelector('#uploadPic')
 		        uploadPic.value = ""
 		    }
 		</script>
-	</head>
-	<body>
-		<input style={{visibility: 'hidden', display: 'none'}} id="uploadPic" disabled={uploadBtnDisable} type="file" onChange={this.onSelectFiles}/>
-        <label className={uploadBtnDisable ? styles['upload-btn-disable'] : styles['upload-btn']} htmlFor="uploadPic">
-            上传文件
-        </label>
 	</body>
 </html>
 

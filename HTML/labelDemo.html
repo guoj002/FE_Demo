@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<!-- 
+	htmlFor 属性设置或返回 lable 的 for 属性的值。
+	for 属性指定 label 要绑定到哪一个表单元素。 
+-->
+<body>
+	<label id='myLabel' for='b'>请选择： </label>
+	<input type="radio" name="a" id='b' value='c'>
+	<input type="radio" name="a" id='newValue' value='c'>
+	<p>点击“尝试一下”按钮返回 label 的 for 属性的值。</p>
+	<p id="demo"></p>
+	<button onclick="getForValue()">获取for属性值</button>
+	<button onclick="changeForValue()">修改for属性值</button>
+	<script>
+		function getForValue(){
+			var x = document.getElementById("myLabel").htmlFor;
+			document.getElementById("demo").innerHTML=x;
+		}
+		function changeForValue(){
+			document.getElementById("myLabel").htmlFor="newValue";
+			document.getElementById("demo").innerHTML="for 属性的值从 'male' 改为 'newValue'。";
+		}
+	</script>
+</body>
+</html>

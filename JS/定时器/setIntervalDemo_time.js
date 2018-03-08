@@ -1,7 +1,7 @@
 //带天数的倒计时
 countDown = times => {
     let timer = null;
-    timer = setInterval(function(){
+    timer = setInterval(() => {
         let day = 0,
             hour = 0,
             minute = 0,
@@ -23,7 +23,7 @@ countDown = times => {
         }
     },1000);   
 }
-// countDown(10);
+countDown(10);
 // 单纯分钟和秒倒计时
 resetTime = time => {
     let timer = null;

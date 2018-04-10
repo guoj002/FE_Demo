@@ -202,28 +202,6 @@ const obj = {
             "isHide": false,
             "paramNameHtml": "state"
         }, {
-            "key": "19",
-            "level": 3,
-            "hasChildren": false,
-            "isUnfolded": true,
-            "isRequired": false,
-            "paramName": "obj",
-            "paramType": "3",
-            "notes": "该条记录对象",
-            "isHide": false,
-            "paramNameHtml": "obj"
-        }, {
-            "key": "20",
-            "level": 3,
-            "hasChildren": false,
-            "isUnfolded": true,
-            "isRequired": false,
-            "paramName": "arr",
-            "paramType": "6",
-            "notes": "该条记录数组",
-            "isHide": false,
-            "paramNameHtml": "arr"
-        }, {
             "key": "21",
             "level": 2,
             "hasChildren": false,
@@ -276,7 +254,37 @@ let index = 0
 getNameOrValue = (paramType, paramName, notes, state) => {
     let name = ''
     let value = 0
-    name = paramName + '|1'
+
+    if(paramType-0 === 1){
+        // 数字
+        name = paramName + '|1-100'
+        value = 1
+    } else if (paramType-0 === 2) {
+        // 字符串
+        name = paramName + '|1-4'
+        value = 'string'
+    } else if (paramType-0 === 3) {
+        // 对象
+        name = paramName
+        value = {}
+    } else if (paramType-0 === 4) {
+        // boolean
+        name = paramName + '|1'
+        value = false
+    } else if (paramType-0 === 5) {
+        // 对象数组
+        name = paramName + '|1-4'
+        value = []
+    } else if (paramType-0 === 6) {
+        // 数字数组
+        name = paramName + '|1'
+        value = []
+    } else if (paramType-0 === 7) {
+        // 字符串数组
+        name = paramName + '|1'
+        value = []
+    }
+
     return state === 0 ? name : value
 }
 
@@ -303,6 +311,7 @@ serializeJsonToMock = (preType, preLevel) => {
 const mockData = serializeJsonToMock(0, 0)
 
 console.log(JSON.stringify(mockData, null, 4))
+console.log('=========== mock转换 ============')
 
 const data = Mock.mock(mockData)
 // 输出结果

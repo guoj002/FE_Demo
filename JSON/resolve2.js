@@ -271,47 +271,28 @@ const obj = {
     ]
 }
 
-const TYPE = ['0-','1-number','2-string','3-object','4-boolean','5-array<object>','6-array<number>','7-array<string>']
-
 let index = 0
 
-getType = num => {
-    let type
-    switch(num){
-        case '1':
-            type = 0
-            break;
-        case '2':
-            type = 'string'
-            break;
-        case '3':
-            type = {}
-            break;
-        case '4':
-            type = false
-            break;
-        default:
-            type = [] 
-    }
-    return type
+getNameOrValue = (paramType, paramName, notes, state) => {
+    let name = ''
+    let value = 0
+    name = paramName + '|1'
+    return state === 0 ? name : value
 }
 
-for (let i = 0 ; i < obj.paramsArr.length ; i += 1) {
-    console.log(i , obj.paramsArr[i].paramName, ': level ==>', obj.paramsArr[i].level, ' hasChildren==>', obj.paramsArr[i].hasChildren, ' paramType==>', TYPE[obj.paramsArr[i].paramType-0], getType(obj.paramsArr[i].paramType))
-}
-
-// 转换函数1
-serializeJson = (type, level) => {
-    const o = {}
-    while(index < obj.paramsArr.length && obj.paramsArr[index].level > level){
-        if(obj.paramsArr[index].hasChildren){
-            o[obj.paramsArr[index].paramName] = serializeJson(obj.paramsArr[index].paramType, obj.paramsArr[index++].level)
+// 转换函数
+serializeJsonToMock = (preType, preLevel) => {
+    let o = {}
+    while(index < obj.paramsArr.length && obj.paramsArr[index].level > preLevel){
+        const { level, hasChildren, paramName, paramType, notes } = obj.paramsArr[index]
+        if(hasChildren){
+            o[getNameOrValue(paramType, paramName, notes, 0)] = serializeJsonToMock(paramType, obj.paramsArr[index++].level)
         } else {
-            o[obj.paramsArr[index].paramName] = getType(obj.paramsArr[index].paramType)
+            o[getNameOrValue(paramType, paramName, notes, 0)] = getNameOrValue(paramType, paramName, notes, 1)
             index++
         }
     }
-    if(type === 5 || type === '5'){
+    if(preType === 5 || preType === '5'){
         const oo = []
         oo[0] = o
         return oo
@@ -319,10 +300,10 @@ serializeJson = (type, level) => {
     return o
 }
 
-const mockData = serializeJson(0, 0)
+const mockData = serializeJsonToMock(0, 0)
 
 console.log(JSON.stringify(mockData, null, 4))
 
 const data = Mock.mock(mockData)
 // 输出结果
-// console.log(JSON.stringify(data, null, 4))
+console.log(JSON.stringify(data, null, 4))

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <input type='text' name='text' id='num' onkeyup="if(isNaN(value))execCommand('undo')" /><br/>
+    <input type='text' name='text' /><br/>
+    <input type=button value=剪切 onclick=document.execCommand('Cut') /><br/>
+    <input type=button value=拷贝 onclick=document.execCommand('Copy') /><br/>
+    <input type=button value=粘贴 onclick=document.execCommand('Paste') /><br/>
+    <input type=button value=撤消 onclick=document.execCommand('Undo') /><br/>
+    <input type=button value=重做 onclick=document.execCommand('Redo') id=button2 name=button2 /><br/>
+    <input type=button value=删除 onclick=document.execCommand('Delete') /><br/>
+    <input type=button value=黑体 onclick=document.execCommand('Bold') /><br/>
+    <input type=button value=斜体 onclick=document.execCommand('Italic') /><br/>
+    <input type=button value=下划线 onclick=document.execCommand('Underline') /><br/>
+    <input type=button value=停止 onclick=document.execCommand('stop') /><br/>
+    <input type=button value=保存 onclick=document.execCommand('SaveAs') /><br/>
+    <input type=button value=另存为 onclick=document.execCommand('Saveas',false,'c:test.htm') /><br/>
+    <input type=button value=字体 onclick=document.execCommand('FontName',false,fn) /><br/>
+    <input type=button value=字体大小 onclick=document.execCommand('FontSize',false,fs) /><br/>
+    <input type=button value=拷贝 onclick=console.log(window) /><br/>
+</body>
+</html>

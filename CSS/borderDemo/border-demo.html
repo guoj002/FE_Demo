@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        .test {
+            width: 50px;
+            height: 50px;
+            border-width: 50px;
+            border-style: solid;
+            border-color: #09F #990 #933 #0C9;
+        }
+        .test1 {
+            width: 0;
+            height: 0;
+            border-width: 75px;
+            border-style: solid;
+            border-color: #09F #990 #933 #0C9;
+        }
+        .test2 {
+            width: 0;
+            height: 0;
+            border-width: 75px;
+            border-style: solid;
+            border-color: #09F transparent transparent;
+            font-size: 0;
+            line-height: 0;
+        }
+        .tag{
+            width:300px;
+            height:100px;
+            border:5px solid #09F;
+            position:relative;
+            background-color:#FFF;
+            margin: 20px;
+        }
+        .em1{
+            display:block;
+            border-width:20px;
+            position:absolute;
+            bottom:0px;
+            left:130px;
+            border-style: dashed dashed solid;
+            border-color: transparent transparent #09F;
+            font-size:0;
+            line-height:0;
+        }
+        .em2{
+            display:block;
+            border-width:20px;
+            position:absolute;
+            top:0px;
+            left:130px;
+            border-style: solid dashed dashed;
+            border-color: #09F transparent transparent;
+            font-size:0;
+            line-height:0;
+        }
+        .em3 {
+            display:block;
+            border-width:20px;
+            position:absolute;
+            bottom:0px;
+            left:130px;
+            border-style: dashed dashed solid;
+            border-color: transparent transparent #09F;
+            font-size:0;
+            line-height:0;
+        }
+        .em4 {
+            display:block;
+            position:absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(200px at 180px 0px, #fff 50px, blue 50px);
+            bottom:0px;
+            left:130px;
+            background: red;
+            font-size:0;
+            line-height:0;
+        }
+        .span1 {
+            display:block;
+            border-width:20px;
+            position:absolute;
+            bottom:-7px;
+            left:130px;
+            border-style: dashed dashed solid;
+            border-color: transparent transparent #FFF;
+            font-size:0;
+            line-height:0;
+        }
+        .arrow{
+            position:absolute;
+            width:40px;
+            height:40px;
+            bottom:-40px;
+            left:100px;
+        }
+        .arrow *{
+            display:block;
+            border-width:20px;
+            position:absolute;
+            border-style:solid dashed dashed dashed;
+            font-size:0;
+            line-height:0;
+        }
+        .arrow em{
+            border-color:#09F transparent transparent;
+        }
+        .arrow span{
+            border-color:#FFF transparent transparent;
+            top:-7px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="test"></div>
+    <div class="test1"></div>
+    <div class="test2"></div>
+    <div class="tag">
+        <em class="em1"></em>   
+        CSS气泡框实现
+        <em class="em2"></em>
+    </div>
+    <div class="tag">
+        <em class="em3"></em>   
+        <span class="span1"></span>
+        CSS气泡框实现
+    </div>
+    <div class="tag">
+        <div class="arrow">
+            <em></em>
+            <span></span>
+        </div>
+        CSS气泡框实现
+    </div>
+    <div class="tag">
+        <em class="em4"></em>   
+        <span class="span1"></span>
+        CSS气泡框实现
+    </div>
+</body>
+</html>

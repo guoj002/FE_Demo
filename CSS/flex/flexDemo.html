@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>flex demo</title>
+    <style type="text/css">
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+        [class$="box"] {
+            width: 104px;
+            height: 104px;
+            margin: 16px;
+            padding: 4px;
+            border-radius: 10%;
+            background-color: #e7e7e7;
+            object-fit: contain;
+            box-shadow:
+            inset 0 5px white, 
+            inset 0 -5px #bbb,
+            inset 5px 0 #d7d7d7, 
+            inset -5px 0 #d7d7d7;  
+        }
+        .item {
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin: 4px;
+            background-color: #333;
+            box-shadow: inset 0 3px #111, inset 0 -3px #555;
+        }
+     /*   .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+        }
+        .item{
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            display: inline-block;
+        }*/
+        
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+            display: flex;
+        }
+        .item1{
+            width: 33%;
+            height: 33%;
+            margin: 3px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        .item2{
+            width: 33%;
+            height: 33%;
+            margin: 3px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box1">
+        <span class="item1"></span>
+        <span class="item1"></span>
+        <span class="item1"></span>
+        <span class="item1"></span>
+        <span class="item1"></span>
+        <span class="item1"></span>
+        <span class="item1"></span>
+        <span class="item1"></span>
+        <span class="item1"></span>
+    </div>
+    <div class="box1">
+        <span class="item1"></span>
+    </div>
+    <div class="box1">
+        <span class="item2"></span>
+    </div>
+</body>
+</html>

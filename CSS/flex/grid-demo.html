@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+        }
+        .flex-container{
+            width: 100%;
+            height: 100%;
+            background-color: lightgrey;
+        }
+        .grid{
+            display: flex;
+            flex-basis: 100%;
+            /*height: auto;*/
+            justify-content: space-between;
+            background-color: #ffffff;
+        }
+        [class$="cell"] {
+            margin: 10px;
+            background-color: #f4f3f0;
+        }
+        .grid-cell{
+            flex-grow: 1;
+            height: 100px;
+        }
+        .grid1-cell{
+            flex-grow: 1;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="grid">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        <div class="grid">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        <div class="grid">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        <div class="grid">
+            <div class="grid1-cell"></div>
+            <div class="grid1-cell"></div>
+        </div>
+        <div class="grid">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

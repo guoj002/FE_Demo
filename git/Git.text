@@ -7,3 +7,52 @@
 
 
 测试四
+
+['全部', '任务', '权益', '新机会', '机会', '预约单', '订单', '录音', '评论', '话术']
+
+case 0:
+    messageType = -1
+break
+case 1:
+    messageType = 11
+break
+case 2:
+    messageType = 10
+break
+case 3:
+    messageType = 1
+break
+case 4:
+    messageType = 2
+break
+case 5:
+    messageType = 3
+break
+case 6:
+    messageType = 4
+break
+case 7:
+    messageType = 14
+break
+case 8:
+    messageType = 15
+break
+case 9:
+    messageType = 5
+break
+
+// 根据 showType 判断消息如何展示  0-小铃铛 1-消息方块 2-任务进行时的消息，里程碑消息 4-顶部跑马灯
+
+<Tooltip
+                visible={boxVisible}
+                trigger="click"
+                onVisibleChange={this.onVisibleChange}
+                overlayClassName={importForm === 'old' ? style['msg-box-tooltip--old'] : style['msg-box-tooltip']}
+                placement="bottomLeft"
+                title={ttt}
+            >
+                <div className={classnames({ [style['msg-wrapper-icon']]: true, [style['msg-wrapper-icon--old']]: importForm === 'old' })}>
+                    { this.showIcon() }
+                    {unreadNum > 0 && <span className={style['msg-unread']}>{unreadNum <= 50 ? unreadNum : '50+'}</span>}
+                </div>
+            </Tooltip>

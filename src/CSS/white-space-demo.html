@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>white space</title>
+	<style type="text/css">
+		p {
+			width: 100px;
+  			background: red;
+		}
+		.p1 {
+			white-space: inherit;
+		}
+		.p2 {
+			white-space: initial;
+		}
+		.p3 {
+			white-space: normal;
+		}
+		.p4 {
+			white-space: nowrap;
+		}
+		.p5 {
+			white-space: pre;
+		}
+		.p6 {
+			white-space: pre-line;
+		}
+		.p7 {
+			white-space: pre-wrap;
+		}
+		.p8 {
+			white-space: unset;
+		}
+	</style>
+</head>
+<body>
+	<p>  hello  world  </p>
+	<p>&nbsp;&nbsp;hello&nbsp;&nbsp;world&nbsp;&nbsp;</p>
+	<pre>  hello  world  </pre>
+	<pre>  hello
+	world  </pre>
+	<p>hello
+	world</p>
+	<p>hello <br/> world</p>
+	--inherit--
+	<p class="p1">  hellohellow  world  hello 
+	 world</p>
+	 --initial--
+	<p class="p2">  hellohellow  world  hello 
+	 world</p>
+	 --normal--
+	<p class="p3">  hellohellow  world  hello 
+	 world</p>
+	 --nowrap--
+	<p class="p4">  hellohellow  world  hello 
+	 world</p>
+	 --pre--
+	<p class="p5">  hellohellow  world  hello 
+	 world</p>
+	 --pre-line--
+	<p class="p6">  hellohellow  world  hello 
+	 world</p>
+	 --pre-wrap--
+	<p class="p7">  hellohellow  world  hello 
+	 world</p>
+	 --unset--
+	<p class="p8">  hellohellow  world  hello 
+	 world</p>
+</body>
+</html>

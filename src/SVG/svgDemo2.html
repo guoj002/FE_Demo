@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SVG2</title>
+	<style type="text/css">
+		.div {
+			width: 500px;
+			height: 300px;
+		}
+		.red {
+			fill: red;
+		}
+		.fancy {
+			fill: none;
+			stroke: black;
+			stroke-width: 3pt;
+		}
+	</style>
+</head>
+<body>
+	<svg width="100%" height="100%">
+  		<circle id="mycircle1" cx="50" cy="50" r="50" fill="green" />
+	</svg>
+	<svg width="100%" height="100" viewBox="50 50 50 50">
+		<circle id="mycircle2" cx="50" cy="50" r="50" />
+	</svg>
+	<svg width="100%" height="100%">
+		<circle id="mycircle3" cx="150" cy="150" r="150" />
+	</svg>
+	<svg viewBox="0 0 50 10">
+		<circle id="mycircle4"cx="50" cy="50" r="50" fill="green" />
+	</svg>
+	<svg>
+		<circle id="mycircle5" cx="50" cy="50" r="50" />
+	</svg>
+	<svg>
+		<circle id="mycircle6" cx="50" cy="50" r="50" />
+	</svg>
+	<div class="div">
+		<svg>
+			<circle id="mycircle" cx="150" cy="150" r="150" />
+		</svg>
+	</div>
+	<svg width="300" height="180">
+ 		<circle cx="30"  cy="50" r="25" />
+ 		<circle cx="90"  cy="50" r="25" class="red" />
+ 		<circle cx="150" cy="50" r="25" class="fancy" />
+	</svg>
+	<svg viewBox="0 0 100 100" width="100" height="100">
+	  	<rect width="150%" height="50%" />
+	</svg>
+	<svg width="300" height="180">
+  		<line x1="0" y1="0" x2="200" y2="10" style="stroke:rgb(0,0,0);stroke-width:5" />
+	</svg>
+	<svg width="300" height="180">
+  		<line x1="0" y1="5" x2="200" y2="15" style="stroke:rgb(0,0,0);stroke-width:5" />
+	</svg>
+	<svg width="300" height="180">
+  		<polyline points="3,3 30,28 3,53" fill="none" stroke="black" />
+	</svg>
+	<svg width="300" height="180">
+		<polyline points="0,0 100,10 0,100" fill="none" style="stroke: black; stroke-width: 10" />
+	</svg>
+	<svg width="300" height="180">
+		<polyline points="0,10 100,20 0,110" fill="none" style="stroke: black; stroke-width: 10" />
+	</svg>
+	<svg width="300" height="180">
+  		<polygon fill="green" stroke="orange" stroke-width="1" points="0,0 100,0 100,100 0,100 0,0"/>
+	</svg>
+	<svg width="300" height="180">
+  		<polygon fill="green" stroke="orange" stroke-width="5" points="0,0 100,0 100,100 0,100"/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg">
+		<circle id="myCircle1" cx="5" cy="5" r="4"/>
+
+		<use href="#myCircle1" x="10" y="0" fill="blue" />
+		<use href="#myCircle1" x="20" y="0" fill="white" stroke="blue" />
+	</svg>
+	<svg width="300" height="100">
+		<g id="myCircle2">
+			<text x="25" y="20">圆形</text>
+			<circle cx="50" cy="50" r="20"/>
+		</g>
+
+		<use href="#myCircle2" x="100" y="0" fill="blue" />
+		<use href="#myCircle2" x="200" y="0" fill="white" stroke="blue" />
+	</svg>
+	<svg width="300" height="100">
+		<defs>
+			<g id="myCircle3">
+				<text x="25" y="20">圆形</text>
+				<circle cx="50" cy="50" r="20"/>
+			</g>
+		</defs>
+
+		<use href="#myCircle3" x="0" y="0" />
+		<use href="#myCircle3" x="100" y="0" fill="blue" />
+		<use href="#myCircle3" x="200" y="0" fill="white" stroke="blue" />
+	</svg>
+	<svg width="500" height="500">
+		<defs>
+			<pattern id="dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+				<circle fill="#bee9e8" cx="50" cy="50" r="35" />
+			</pattern>
+		</defs>
+		<rect x="0" y="0" width="100%" height="100%" fill="url(#dots)" />
+	</svg>
+	<svg width="500px" height="150px">
+		<rect x="0" y="0" width="100" height="100" fill="#feac5e">
+			<animate attributeName="x" from="0" to="600" dur="2s" repeatCount="indefinite" />
+		</rect>
+	</svg>
+	<svg width="500px" height="150px">
+		<rect x="0" y="0" width="100" height="100" fill="#feac5e">
+			<animate attributeName="width" to="500" dur="2s" repeatCount="indefinite" />
+		</rect>
+	</svg>
+	<svg width="500px" height="500px">
+		<rect x="250" y="250" width="50" height="50" fill="#4bc0c8">
+			<animateTransform 
+				attributeName="transform"
+				type="rotate"
+				begin="0s"
+				dur="10s"
+				from="0 200 200"
+				to="360 400 400"
+				repeatCount="indefinite"
+			/>
+		</rect>
+		<circle cx="200" cy="200" r="2" fill="red" />
+		<circle cx="400" cy="400" r="2" fill="red" />
+	</svg>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SVG3</title>
+	<style type="text/css">
+		circle {
+			stroke-width: 5;
+			stroke: #f00;
+			fill: #ff0;
+		}
+
+		circle:hover {
+			stroke: #090;
+			fill: #fff;
+		}
+	</style>
+</head>
+<body>
+	<svg
+		id="mysvg"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 800 600"
+		preserveAspectRatio="xMidYMid meet"
+	>
+		<circle id="mycircle" cx="400" cy="300" r="50" />
+	<svg>
+	<script type="text/javascript">
+		var mycircle = document.getElementById('mycircle');
+
+		mycircle.addEventListener('click', function(e) {
+				console.log('circle clicked - enlarging');
+				mycircle.setAttribute('r', 60);
+			}, false);
+	</script>
+</body>
+</html>

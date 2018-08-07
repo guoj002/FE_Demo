@@ -105,6 +105,50 @@
 		</defs>
 		<rect x="0" y="0" width="100%" height="100%" fill="url(#dots)" />
 	</svg>
+		<svg width="350" height="160">
+		<g class="layer" transform="translate(60,10)">
+			<circle r="5" cx="0"   cy="105" />
+			<circle r="5" cx="90"  cy="90"  />
+			<circle r="5" cx="180" cy="60"  />
+			<circle r="5" cx="270" cy="0"   />
+			<g class="y axis">
+				<line x1="0" y1="0" x2="0" y2="120" style="stroke:rgb(255,0,0);stroke-width:2" />
+				<text x="-40" y="105" dy="5">$10</text>
+				<text x="-40" y="0"   dy="5">$80</text>
+			</g>
+			<g class="x axis" transform="translate(0, 120)">
+				<line x1="0" y1="0" x2="270" y2="0" style="stroke:rgb(255,0,0);stroke-width:2" />
+				<text x="-30"   y="20">January 2014</text>
+				<text x="240" y="20">April</text>
+			</g>
+		</g>
+	</svg>
+	<svg width="350" height="160">
+		<g class="layer">
+			<circle r="5" cx="0"   cy="105" />
+			<circle r="5" cx="90"  cy="90"  />
+			<circle r="5" cx="180" cy="60"  />
+			<circle r="5" cx="270" cy="0"   />
+			<g class="y axis">
+				<line x1="0" y1="0" x2="0" y2="120" style="stroke:rgb(255,0,0);stroke-width:2" />
+				<text x="-40" y="105" dy="5">$10</text>
+				<text x="-40" y="0"   dy="5">$80</text>
+			</g>
+			<g class="x axis" transform="translate(0, 120)">
+				<line x1="0" y1="0" x2="270" y2="0" style="stroke:rgb(255,0,0);stroke-width:2" />
+				<text x="-30"   y="20">January 2014</text>
+				<text x="240" y="20">April</text>
+			</g>
+		</g>
+	</svg>
+	<p><strong>SVG属性控制45度旋转</strong></p>
+	<svg width="200" height="150">
+	    <rect x="30" y="30" width="120" height="90" rx="10" ry="10" fill="#a0b3d6" transform="rotate(45, 90 75)"></rect>
+	</svg>
+
+	<!-- animate -->
+	<h6>animate</h6>
+
 	<svg width="500px" height="150px">
 		<rect x="0" y="0" width="100" height="100" fill="#feac5e">
 			<animate attributeName="x" from="0" to="600" dur="2s" repeatCount="indefinite" />
@@ -115,6 +159,16 @@
 			<animate attributeName="width" to="500" dur="2s" repeatCount="indefinite" />
 		</rect>
 	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="100px">
+	    <rect x="0" y="0" width="300" height="100" stroke="black" stroke-width="1" />
+	    <circle cx="0" cy="50" r="15" fill="blue" stroke="black" stroke-width="1">
+	        <animate attributeName="cx" from="0" to="100" dur="5s" repeatCount="indefinite" />
+	    </circle>
+	</svg>
+
+	<!-- animateTransform -->
+	<h6>animateTransform</h6>
+
 	<svg width="500px" height="500px">
 		<rect x="250" y="250" width="50" height="50" fill="#4bc0c8">
 			<animateTransform 
@@ -130,6 +184,75 @@
 		<circle cx="200" cy="200" r="2" fill="red" />
 		<circle cx="400" cy="400" r="2" fill="red" />
 	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="200px">
+	    <rect x="0" y="0" width="200" height="200" fill="yellow" stroke="red" stroke-width="1" />
+	    <rect x="20" y="50" width="15" height="34" fill="blue" stroke="black" stroke-width="1" transform="rotation">
+	        <!-- Rotate from 0 to 360 degrees, and move from 60 to 100 in the x direction. -->
+	        <!-- Keep doing this until the drawing no longer exists. -->
+	        <animateTransform
+	        	attributeType="XML"
+	        	attributeName="transform"
+	        	begin="0s"
+	        	dur="5s"
+	        	type="rotate"
+	        	from="20 60 60"
+	        	to="360 100 60"
+	        	repeatCount="indefinite"
+	        />
+	    </rect>
+	</svg>
 
+	<!-- 用svg实现： -->
+	<svg
+		version="1.1"
+		id="loader-1"
+		xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		x="0px"
+		y="0px"
+		width="40px"
+		height="40px"
+		viewBox="0 0 40 40"
+		enable-background="new 0 0 40 40"
+		xml:space="preserve"
+	>
+		<path
+			opacity="0.2"
+			fill="#000"
+			d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
+		/>
+		<path
+			fill="#000"
+			d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0 C22.32,8.481,24.301,9.057,26.013,10.047z"
+		>
+			<animateTransform
+				attributeType="xml"
+				attributeName="transform"
+				type="rotate"
+				from="0 20 20"
+				to="360 20 20"
+				dur="0.5s"
+				repeatCount="indefinite"
+			/> 
+		</path>
+	</svg>
+
+
+	<!-- animateMotion -->
+	<h6>animateMotion</h6>
+
+	<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="100px">
+	    <rect x="0" y="0" width="300" height="100" fill="yellow" stroke-width="1" stroke="red" />
+	    <circle cx="0" cy="50" r="15" fill="blue" stroke="black" stroke-width="1">
+	    	<!-- Horizontal-line命令来将圆向右移动300像素到右边 -->
+	        <animateMotion path="M 0 0 H 300 Z" dur="3s" repeatCount="indefinite" />
+	    </circle>
+	</svg>
+	<svg width="300px" height="100px">
+	    <rect x="0" y="0" width="300" height="100" fill="yellow" stroke-width="1" stroke="red" />
+	    <rect x="0" y="0" width="20" height="20" fill="blue" stroke="black" stroke-width="1">
+	        <animateMotion path="M 250,80 H 50 Q 30,80 30,50 Q 30,20 50,20 H 250 Q 280,20,280,50 Q 280,80,250,80Z" dur="3s" repeatCount="indefinite" rotate="auto">
+	    </rect>
+	</svg>
 </body>
 </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			background: black;
+		}
+		div {
+			display: inline-block;
+			font-size: 140px;
+			opacity: 0.33;
+			color: red;
+			/*color: rgb(255, 255, 255);*/
+			animation: snow 5s linear 0s infinite alternate;
+		}
+		@keyframes snow {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+
+			}
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		(function($){
+			$.fn.snow=function(options){
+				var $flake=$('<div id="flake" />')
+						.css({'position':'absolute','top':'-50px'})
+						.html('&#10052;'),
+					documentHeight=$(document).height(),
+					documentWidth=$(document).width(),
+					defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},
+					options=$.extend({},defaults,options);
+
+				var interval=setInterval(
+					function(){
+						var startPositionLeft=Math.random()*documentWidth-100,
+							startOpacity=0.5+Math.random(),
+							sizeFlake=options.minSize+Math.random()*options.maxSize,
+							endPositionTop=documentHeight-40,
+							endPositionLeft=startPositionLeft-100+Math.random()*200,
+							durationFall=documentHeight*10+Math.random()*5000;
+						$flake
+							.clone()
+							.appendTo('body')
+							.css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor})
+							.animate(
+								{top:endPositionTop,left:endPositionLeft,opacity:0.2},
+								durationFall,
+								'linear',
+								function(){
+									$(this).remove()
+								}
+							);
+						},
+					options.newOn
+				);
+			};
+		})(jQuery);
+
+		$.fn.snow({ minSize: 5, maxSize: 50, newOn: 1000, flakeColor: '#FFF' });
+
+	</script>
+	<div>❄</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			height: 30px;
+			line-height: 30px;
+			font-size: 25px;
+			background: lightgreen;
+		}
+		img {
+			width: 10px;
+			height: 10px;
+			/*vertical-align: auto;*/
+		}
+		.flex-bar {
+			display: inline-flex;
+			align-items: center;
+		}
+		.block-bar1 {
+			display: inline-block;
+			/*vertical-align: middle;*/
+		}
+		.block-bar1 span{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.block-bar img {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div class="flex-bar">
+		<img src="../IMG/titlebg3.png" >TEXT文字文字flex
+	</div>
+	<hr />
+	<div class="block-bar">
+		<img src="../IMG/titlebg3.png" >TEXT文字文字block
+	</div>
+	<hr />
+	<div class="block-bar1">
+		<img src="../IMG/titlebg3.png" ><span>TEXT文字文字block_span</span>
+	</div>
+	<hr />
+
+</body>
+</html>

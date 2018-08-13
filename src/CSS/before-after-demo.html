@@ -3,14 +3,47 @@
     <head> 
         <title>Pseudo Demo</title> 
         <style> 
-            body{background-color:#ccd3d7;padding:40px;} 
-            h2{display:block;border-bottom:1px solid #ddd;padding:15px;} 
-            p.myquote{padding:1em;font-size:16px;margin:8px 1em;position:relative;color:blue;line-height:1.7em;} 
-            p.myquote:before,p.myquote:after{font-size:40px;position:absolute;padding:0;margin:0;color:green;} 
-            p.myquote:hover:before,p.myquote:hover:after{color:red;font-size:50px;} 
-            p.myquote:before{content:"“";left:0;left:-10px;} 
-            p.myquote:after{content:"”";padding-left:15px;bottom:4px;} 
-            .shbox{ 
+            body {
+                background-color:#ccd3d7;
+                padding:40px;
+            } 
+            h2 {
+                display:block;
+                border-bottom:1px solid #ddd;
+                padding:15px;
+            } 
+            p.myquote {
+                padding:1em;
+                font-size:16px;
+                margin:8px 1em;
+                position:relative;
+                color:blue;
+                line-height:1.7em;
+            } 
+            p.myquote:before,
+            p.myquote:after {
+                font-size:40px;
+                position:absolute;
+                padding:0;
+                margin:0;
+                color:green;
+            } 
+            p.myquote:before {
+                content:"“";
+                /*left:0;*/
+                left:-10px;
+            } 
+            p.myquote:after {
+                content:"”";
+                padding-left:15px;
+                bottom:4px;
+            } 
+            p.myquote:hover:before,
+            p.myquote:hover:after {
+                color:red;
+                font-size:50px;
+            } 
+            .shbox { 
                 background:#fff; 
                 padding:10px; 
                 width:90%; 
@@ -18,8 +51,11 @@
                 height:auto; 
                 margin:40px auto; 
             } 
-            .sh-down-lr{position:relative;} 
-            .sh-down-lr:before,.sh-down-lr:after{ 
+            .sh-down-lr {
+                position:relative;
+            } 
+            .sh-down-lr:before,
+            .sh-down-lr:after { 
                 z-index: -1; 
                 position: absolute; 
                 content: ""; 
@@ -29,20 +65,10 @@
                 top: 80%; 
                 max-width:300px; 
                 background: #777; 
-                -webkit-box-shadow: 0 15px 10px #777; 
-                -moz-box-shadow: 0 15px 10px #777; 
                 box-shadow: 0 15px 10px #777; 
-                -webkit-transform: rotate(-3deg); 
-                -moz-transform: rotate(-3deg); 
-                -o-transform: rotate(-3deg); 
-                -ms-transform: rotate(-3deg); 
                 transform: rotate(-3deg); 
             } 
             .sh-down-lr:after{ 
-                -webkit-transform: rotate(3deg); 
-                -moz-transform: rotate(3deg); 
-                -o-transform: rotate(3deg); 
-                -ms-transform: rotate(3deg); 
                 transform: rotate(3deg); 
                 right:10px; 
                 left:auto; 
@@ -53,12 +79,14 @@
                 height:225px; 
                 margin: 50px; 
                 position: relative; 
-                -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
-                -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
                 box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
             } 
-            .stackone img{width:100%;heigth:100%;} 
-            .stackone:before,.stackone:after { 
+            .stackone img {
+                width:100%;
+                heigth:100%;
+            } 
+            .stackone:before,
+            .stackone:after { 
                 content: ""; 
                 width: 400px; 
                 height:225px; 
@@ -68,22 +96,12 @@
                 z-index:-1; 
                 top:0; 
                 left:-10px; 
-                -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
-                -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
                 box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
-                -webkit-transform: rotate(-5deg); 
-                -moz-transform: rotate(-5deg); 
-                -o-transform: rotate(-5deg); 
-                -ms-transform: rotate(-5deg); 
                 transform: rotate(-5deg); 
             } 
             .stackone:after { 
                 top:5px; 
                 left:0; 
-                -webkit-transform: rotate(3deg); 
-                -moz-transform: rotate(3deg); 
-                -o-transform: rotate(3deg); 
-                -ms-transform: rotate(3deg); 
                 transform: rotate(3deg); 
             } 
         </style> 

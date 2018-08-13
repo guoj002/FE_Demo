@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		span.text {
+			color: red;
+		}
+		.red.p1 {
+			color: red;
+		}
+		h1[class] {
+			background: lightgreen;
+		}
+		h1[class][title] {
+			font-weight: lighter;
+		}
+		h1[title="属性选择器1"] {
+			color: orange;
+		}
+		.hh2[title*="属性"] {
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span class="text">类选择器</span>
+	</div>
+	<hr />
+
+	<p class="p1">多类选择器</p>
+	<p class="p1 red">多类选择器</p>
+	<hr />
+
+	<h1>属性选择器</h1>
+	<h1 class="hh1">属性选择器</h1>
+	<h1 class="hh2" title="属性选择器">属性选择器</h1>
+	<h1 class="hh3 hh2" title="属性选择器1">属性选择器</h1>
+	<hr />
+</body>
+</html>

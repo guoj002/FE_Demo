@@ -1,49 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <style type="text/css">
-        body{
-          background:#eee;
-        }
-        div{
-          position:relative;
-          margin:50px auto;
-          width:100px;
-          height:100px;
-          /*box-sizing:border-box;*/
-          border:1px solid blue;  
-          background:#fff;
-          line-height:120px;
-          text-indent:5px;
-        }
+	<title>transform demo</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		div {
+			width: 200px;
+			height: 100px;
+			margin: 30px;
+			background: yellow;
 
-        div::before{
-          content:"";
-          position:absolute;
-          right:0;
-          top:0;
-          width:0;
-          height:0;
-          border:29px solid transparent;
-          border-right:29px solid deeppink;
-          border-top:29px solid deeppink;
-        }
+			/*顺时针旋转, 旋转基点为中心点*/
 
-        div::after{
-          content:"";
-          position:absolute;
-          right:0;
-          top:0;
-          width:0;
-          height:0;
-          border:28px solid transparent;
-          border-right:28px solid #fff;
-          border-top:28px solid #fff;
-        }
-    </style>
+			/*设置旋转元素的基点位置*/
+			/*默认值：50% 50% 0*/
+			/*transform-origin: x-axis y-axis z-axis;*/
+			/*x-axis: left center right length % ;*/
+			/*y-axis: top center bottom length % ;*/
+			/*z-axis: length ;*/
+			transform-origin: 20% 40%;
+
+
+			/*移动*/
+			/*transform: translate(25px,25px);*/
+			/*transform: translate3d(x, y, z);*/
+			/*transform: translateX(25px);*/
+			/*transform: translateY(25px);*/
+			/*transform: translateZ(25px);*/
+
+			/*缩放*/
+			/*transform: scale(1.1, 1.1);*/
+			/*transform: scale3d(x, y, z);*/
+			/*transform: scaleX(1.1);*/
+			/*transform: scaleY(1.1);*/
+			/*transform: scaleZ(1.1);*/
+
+			/*旋转*/
+			transform: rotate(9deg);
+			/*transform: rotate3d(x, y, z, angle); */
+			/*transform: rotateX(9deg);*/
+			/*transform: rotateY(9deg);*/
+			/*transform: rotateZ(9deg);*/
+
+			/*倾斜*/
+			/*transform:skew(10deg,10deg);*/
+			/*transform:skewX(10deg);*/
+			/*transform:skewY(10deg);*/
+			
+			/*matrix() 方法把所有 2D 转换方法组合在一起。*/
+			/*matrix() 方法需要六个参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素。*/
+			/*transform: matrix(0.866,0.5,-0.7,0.866,0,0);*/
+			/*transform: matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)*/
+
+			/*为 3D 转换元素定义透视视图*/
+			/*transform: perspective(0);*/
+
+
+		}
+		#div1 {
+			position: relative;
+			height: 200px;
+			width: 200px;
+			margin: 100px;
+			padding: 10px;
+			border: 1px solid black;
+		}
+
+		#div2 {
+			padding: 50px;
+			position: absolute;
+			border: 1px solid black;
+			background-color: yellow;
+			
+			transform: rotate(45deg);
+			transform-origin: 20% 40%;
+		}
+	</style>
 </head>
 <body>
-    <div></div>
+	<div>顺时针旋转, 旋转中心为中心点</div>
+	<div id="div1">
+  		<div id="div2">HELLO</div>
+	</div>
+
 </body>
 </html>

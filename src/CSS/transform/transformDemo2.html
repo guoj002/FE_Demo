@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transform demo 2</title>
+	<style type="text/css">
+		
+		body {
+			margin:30px;
+			background-color:#E9E9E9;
+		}
+
+		div.polaroid {
+			width:294px;
+			padding:10px 10px 20px 10px;
+			border:1px solid #BFBFBF;
+			background-color:white;
+			/* Add box-shadow */
+			box-shadow:2px 2px 3px #aaaaaa;
+		}
+
+		div.rotate_left {
+			float:left;
+			transform:rotate(7deg);
+		}
+
+		div.rotate_right {
+			float:left;
+			transform:rotate(-8deg);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="polaroid rotate_left">
+		<img src="../../IMG/titlebg3.png" alt="郁金香" width="284" height="213" />
+		<p class="caption">上海鲜花港的郁金香，花名：Ballade Dream。</p>
+	</div>
+
+	<div class="polaroid rotate_right">
+		<img src="../../IMG/titlebg4.jpg" alt="世博中国馆" width="284" height="213" />
+		<p class="caption">2010年上海世博会，中国馆。</p>
+	</div>
+</body>
+</html>

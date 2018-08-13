@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transitionDemo</title>
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+			background: yellow;
+
+			/*transition: width 2s;*/
+
+			transition: width 2s, height 2s, transform 2s, background 2s;
+
+			/*transition: width 1s linear 2s;*/
+
+			/*应用过渡的 CSS 属性的名称*/
+			/*过渡效果花费的时间*/
+			/*过渡效果的时间曲线*/
+			/*过渡效果何时开始。*/
+
+			/*transition-property: width; 
+			transition-duration: 1s; 
+			transition-timing-function: linear; 
+			transition-delay: 0s; */
+
+		}
+
+		div:hover {
+			width: 200px;
+			height: 200px;
+			transform: rotate(180deg);
+			background: lightyellow;
+		}
+	</style>
+</head>
+<body>
+	<div>请把鼠标指针放到黄色的 div 元素上，来查看过渡效果。</div>
+</body>
+</html>

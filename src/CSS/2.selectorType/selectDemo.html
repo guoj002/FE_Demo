@@ -3,6 +3,10 @@
 <head>
 	<title></title>
 	<style type="text/css">
+		* {
+			/*padding: 0;*/
+			/*margin: 0;*/
+		}
 		span.text {
 			color: red;
 		}
@@ -21,6 +25,46 @@
 		.hh2[title*="属性"] {
 			border: 1px solid red;
 		}
+		.sidebar {
+			width: 29%;
+			height: 100px;
+			display: inline-block;
+			background: blue;
+		}
+		.main {
+			width: 69%;
+			height: 100px;
+			display: inline-block;
+			background: lightyellow;
+		}
+		.sidebar a:link {
+			color: white;
+		}
+		.sidebar a:visited {
+			color: pink;
+		}
+		.main a {
+			color: blue;
+		}
+		h1 > strong {
+			color: red;
+		}
+		h1 + p {
+			color: blue;
+		}
+		li + li {
+			color: orange;
+		}
+		ol + ul {
+			font-weight: bold;
+		}
+		li:first-child {
+			text-transform: uppercase;
+			color: red;
+		}
+		p::first-letter {
+			color: green;
+		}
 	</style>
 </head>
 <body>
@@ -38,5 +82,39 @@
 	<h1 class="hh2" title="属性选择器">属性选择器</h1>
 	<h1 class="hh3 hh2" title="属性选择器1">属性选择器</h1>
 	<hr />
+	<div class="sidebar">
+		<a href="baidu.com">llllllll</a>
+		<a href="a">llllllll</a>
+		<a href=''>llllllll</a>
+		<a >llllllll</a>
+		<a href="www.baidu.com">llllllll</a>
+		<a href="http:www.baidu.com">llllllll</a>
+		<a href="">llllllll</a>
+	</div>
+	<div class="main">
+		<a href="">llllllll</a>
+		<a href="">llllllll</a>
+		<a href="">llllllll</a>
+		<a href="">llllllll</a>
+	</div>
+	<h1>This is <strong> very </strong> important</h1>
+	<p>我也是h1的相邻兄弟</p>
+	<p>我也是h1的相邻兄弟</p>
+	<p>我也是h1的相邻兄弟</p>
+	<h1>我是h1  This is <em> really <strong> very </strong></em> important</h1>
+	<p>我是h1的相邻兄弟</p>
+	<p>我不是h1的相邻兄弟</p>
+	<div>
+		<ol>
+			<li>list1</li>
+			<li>list2<em> iscool </em></li>
+			<li>list3</li>
+		</ol>
+		<ul>
+			<li>list1</li>
+			<li>list2</li>
+			<li>list3</li>
+		</ul>
+	</div>
 </body>
 </html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			outline: none;
+		}
+		html, body {
+			height: 100%;
+		}
+		h1, h2, h3, h4 {
+			margin: 0;
+		}
+		img {
+			vertical-align: middle;
+			height: auto;
+			width: 100%;
+		}
+
+		header {
+			width: 100%;
+			height: 70px;
+			position: fixed;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			tap-highlight-color: rgba(0,0,0,0);
+			background: #212121;
+			color: #fff;
+		}
+
+		main {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			padding: 70px 20px 0;
+		}
+		main > div {
+			margin: auto;
+			max-width: 600px;
+		}
+		main h2 span {
+			color: #BF7497;
+		}
+		main p {
+			line-height: 1.5;
+			font-weight: 200;
+			margin: 20px 0;
+		}
+		main small {
+			font-weight: 300;
+			color: #888;
+		}
+		strong {
+			font-weight: 600;
+		}
+		
+		ul {
+			padding: 0;
+			list-style: none;
+		}
+		a {
+			color: currentColor;
+			transition: .2s ease-in-out;
+		}
+		a,
+		a:visited,
+		a:focus,
+		a:active,
+		a:link {
+			text-decoration: none;
+			outline: 0;
+		}
+
+		.page {
+			width: 100%;
+			height: 100vh;
+			font-family: 'Encode Sans Condensed', sans-serif;
+			font-weight: 600;
+			letter-spacing: .03em;
+			color: #212121;
+			background: #fdfdfd;
+		}
+
+		#nav-container {
+			position: fixed;
+			height: 100vh;
+			width: 100%;
+			pointer-events: none;
+		}
+		#nav-container * {
+			visibility: visible;
+		}
+		#nav-container .bg {
+			width: 100%;
+			height: calc(100% - 70px);
+			position: absolute;
+			top: 70px;
+			left: 0;
+			visibility: hidden;
+			opacity: 0;
+			background: #000;
+			transition: .3s;
+		}
+		#nav-container:focus-within .bg {
+			visibility: visible;
+			opacity: .6;
+		}
+
+		.button {
+			height: 70px;
+			width: 30px;
+			margin-left: 25px;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			appearance: none;
+			border: 0;
+			border-radius: 0;
+			pointer-events: auto;
+			touch-action: manipulation;
+			tap-highlight-color: rgba(0,0,0,0);
+			background: transparent;
+			z-index: 1;
+			cursor: pointer;
+		}
+		.icon-bar {
+			width: 100%;
+			height: 3px;
+			display: block;
+			background: #aaa;
+			transition: .3s;
+		}
+		.icon-bar + .icon-bar {
+			margin-top: 5px;
+		}
+
+		#nav-container:focus-within .button {
+			pointer-events: none;
+		}
+		#nav-container:focus-within .icon-bar:nth-of-type(1) {
+			transform: translate3d(0,8px,0) rotate(45deg);
+		}
+		#nav-container:focus-within .icon-bar:nth-of-type(2) {
+			opacity: 0;
+		}
+		#nav-container:focus-within .icon-bar:nth-of-type(3) {
+			transform: translate3d(0,-8px,0) rotate(-45deg);
+		}
+
+		#nav-content {
+			width: 90%;
+			max-width: 300px;
+			height: calc(100% - 70px);
+			padding: 20px;
+			margin-top: 70px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			pointer-events: auto;
+			tap-highlight-color: rgba(0,0,0,0);
+			transform: translateX(-100%);
+			transition: transform .3s;
+			will-change: transform;
+			contain: paint;
+			background: #ececec;
+		}
+
+		#nav-content ul {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		#nav-content li a {
+			padding: 10px 5px;
+			display: block;
+			text-transform: uppercase;
+			transition: color .1s;
+		}
+
+		#nav-content li a:hover {
+			color: #BF7497;
+		}
+
+		#nav-content li:not(.small) + .small {
+			margin-top: auto;
+		}
+
+		.small {
+			display: flex;
+			align-self: center;
+		}
+
+		.small a {
+			font-size: 12px;
+			font-weight: 400;
+			color: #888;
+		}
+		.small a + a {
+			margin-left: 15px;
+		}
+
+		#nav-container:focus-within #nav-content {
+			transform: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<header tabindex="0">Header</header>
+		<div id="nav-container">
+			<div class="bg"></div>
+			<div class="button" tabindex="0">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</div>
+			<div id="nav-content" tabindex="0">
+				<ul>
+					<li><a href="#0">Home</a></li>
+					<li><a href="#0">Services</a></li>
+					<li><a href="#0">Blog</a></li>
+					<li><a href="#0">About</a></li>
+					<li><a href="#0">Contact</a></li>
+					<li class="small"><a href="#0">Facebook</a><a href="#0">Instagram</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<main>
+			<div class="content">
+				<h2>Off-screen navigation using <span>:focus-within</span></h2>
+				<p>Adding yet another pure CSS technique to the list of off-screen navigation by "hacking" the :focus-within pseudo-class. Have a look at the code to see how it works.</p>
+				<small><strong>NB!</strong> Use a browser that supports :focus-within</small>
+			</div>
+		</main>
+	</div>
+</body>
+</html>

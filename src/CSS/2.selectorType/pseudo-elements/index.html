@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		span {
+			/*display: inline-block;*/
+		}
+		p {
+			color: orange;
+		}
+		*::first-letter {
+			color: lightgreen;
+		}
+		*::first-line {
+			/*background: lightpink;*/
+			/*border: 1px solid red;*/
+		}
+		p::before {
+			content: "开始 ";
+			color: blue;
+		}
+		p::after {
+			content: " 结束";
+			color: pink;
+		}
+
+		div {
+			color: green;
+		}
+		div::before {
+            content: "jdk";
+            color: blue;
+        }
+        div::first-letter {
+            font-size: 20px;
+            color: red;
+        }
+        div::after {
+        	content: "shu";
+        	color: purple;
+        }
+
+	</style>
+</head>
+<body>
+	<h1>h11111</h1>
+	<p>pppppppp</p>
+	<span>spanspan</span>
+	<div>divdivdiv</div>
+</body>
+</html>

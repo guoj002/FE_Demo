@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>focus-within</title>
+		<style type="text/css">
+			html,
+			body,
+			.g-father,
+			.g-children {
+			    padding: 30px;
+			    border:1px solid #999;
+			}
+
+			input:focus {
+			    /*&:focus {*/
+		        background: #00bcd4;
+			    /*}*/
+			}
+
+			html:focus-within {
+			    background: #e91e63;
+			}
+
+			body:focus-within {
+			    background: #ff5722;
+			}
+
+			.g-father:focus-within {
+			    background: #ffeb3b;
+			}
+
+			.g-children:focus-within {
+			    background: #4caf50;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="g-father">
+		    <div class="g-children">
+		    	<p>一个元素获得焦点，或，该元素的后代元素获得焦点。划重点，它或它的后代获得焦点。</p>
+		        <input type="button" value="Button">
+		    </div>
+		</div>
+	</body>
+</html>

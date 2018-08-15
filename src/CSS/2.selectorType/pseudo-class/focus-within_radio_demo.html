@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.g-container {
+		    width: 300px;
+		    margin: 50px auto;
+		}
+
+	    .g-section {
+	        position: relative;
+	        padding: 10px;
+	        box-sizing: border-box;
+	        border: 1px solid transparent;
+	    }
+	    
+	    input {
+	        position: absolute;
+	        border: none;
+	        outline: none;
+	        background: none;
+	        width: 20px;
+	        height: 20px;
+	        border-radius: 50%;
+	        border: 1px solid #aaa;
+	        box-sizing: border-box;
+	        top: 50%;
+	        left: 10px;
+	        transform: translate(0, -50%);
+	        cursor: pointer;
+	    }
+
+		p {
+	        line-height: 1.4;
+	        padding-left: 40px;
+	    }
+	    
+	    .g-section:focus-within {
+            background: 
+                linear-gradient(90deg, #03a9f4 50%, transparent 0) repeat-x,
+                linear-gradient(90deg, #03a9f4 50%, transparent 0) repeat-x,
+                linear-gradient(0deg, #03a9f4 50%, transparent 0) repeat-y,
+                linear-gradient(0deg, #03a9f4 50%, transparent 0) repeat-y;
+            background-size: 8px 1px, 8px 1px, 1px 8px, 1px 8px;
+            background-position: 0 0, 0 100%, 0 0, 100% 0;
+            animation: linearGradientMove .5s infinite linear;
+	    }
+
+	    .g-section:focus-within input{
+            background: #03a9f4;
+	    }
+
+		@keyframes linearGradientMove {
+		    100% {
+		        background-position: 6% 0, -6% 100%, 0 -6%, 100% 6%;
+		    }
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="g-container">
+	    <div class="g-section">
+	        <input type="button">
+	        <p>
+	            :focus-within 是一个CSS 伪类 ，表示一个元素获得焦点，或，该元素的后代元素获得焦点。换句话说，元素自身或者它的某个后代匹配:focus伪类。
+	        </p>
+	    </div>
+	    <div class="g-section">
+	        <input type="button">
+	        <p>
+	            :focus-within 是一个CSS 伪类 ，表示一个元素获得焦点，或，该元素的后代元素获得焦点。换句话说，元素自身或者它的某个后代匹配:focus伪类。
+	        </p>
+	    </div>
+	    <div class="g-section">
+	        <input type="button">
+	        <p>
+	            :focus-within 是一个CSS 伪类 ，表示一个元素获得焦点，或，该元素的后代元素获得焦点。换句话说，元素自身或者它的某个后代匹配:focus伪类。
+	        </p>
+	    </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>嵌套选择器demo</title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			background: greenyellow;
+			& .span {
+				color: red;
+			}
+			@nest body & {
+				border: 1px solid blue;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span class="span">
+			嵌套选择器demo
+		</span>
+	</div>
+</body>
+</html>

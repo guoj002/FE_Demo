@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>absolute</title>
+  <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        width:1000px;
+        border: 10px solid black;
+    }
+    body {
+        width:800px;
+        background: greenyellow;
+        border: 10px solid blue;
+    }
+    #box {
+        width:50%;
+        height:300px;
+        position: absolute;
+        margin-left: 200px;
+        color: white;
+        border: 1px solid red;
+    }
+    #can {
+        width:50%;
+        height:50%;
+        position:absolute;
+        top:100px;
+        left:100px;
+        color: orange;
+        border:1px solid black;
+    }
+  </style> 
+</head>  
+<body>
+    body
+    <div id="box">
+        其父元素为窗体
+        <div id="can">
+            绝对定位元素，它的父元素是离它最近的定位元素（绝对定位，相对定位，固定，但不包括浮动）或者视窗尺寸（没找到定位元素时）。
+            “窗体也不是绝对的。。。”
+        </div>
+    </div>
+</body>  
+</html>

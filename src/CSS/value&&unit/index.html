@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>检测您的浏览器是否支持常用单位</title>
+        <style type="text/css">
+            body {
+                padding: 20px;
+            }
+            div {
+                background: #99ff99;
+                padding: 5px;
+                margin-bottom: 10px;
+                white-space: nowrap;
+                width: 0;
+            }
+            div:after {
+                content: " (supported)";
+            }
+            div.fail {
+                width: 100% !important;
+                background: #ff6666 !important;
+            }
+            div.fail:after {
+                content: " (NOT supported)";
+            }
+        </style> 
+    </head>  
+    <body>
+        <h1>检测您的浏览器是否支持常用单位</h1>
+        <div id="percentage">50% - percentage</div>
+        <div id="pixel">400px - pixels (device pixels)</div>
+        <div id="em">20em - relative unit</div>
+        <div id="rem">20rem - root em</div>
+        <div id="vw">15vw - viewport width</div>
+        <div id="vh">60vh - viewport height</div>
+        <div id="vmin">60vmin - smaller of vw or vh</div>
+        <div id="vmax">60vmax - larger of vw or vh</div>
+        <div id="inch">4in - inches</div>
+        <div id="cm">20cm - centimeters</div>
+        <div id="mm">200mm - millimeters</div>
+        <div id="pt">120pt - points</div>
+        <div id="pc">40pc - picas</div>
+        <div id="ex">60ex - x-height</div>
+        <div id="ch">60ch - based on width of zero (0) character</div>
+
+        <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+        <script>
+            // 给指定元素设置宽度
+            var percentage = $("#percentage").css("width", "50%");
+            // 如果宽度值为0,即不支持，为此元素添加fail类
+            if (percentage.width() == 0) percentage.addClass("fail");
+
+            var pixel = $("#pixel").css("width", "400px");
+            if (pixel.width() == 0) pixel.addClass("fail");
+
+            var em = $("#em").css("width", "20em");
+            if (em.width() == 0) em.addClass("fail");
+
+            var rem = $("#rem").css("width", "20rem");
+            if (rem.width() == 0) rem.addClass("fail");
+
+            var vw = $("#vw").css("width", "15vw");
+            if (vw.width() == 0) vw.addClass("fail");
+
+            var vh = $("#vh").css("width", "60vh");
+            if (vh.width() == 0) vh.addClass("fail");
+
+            var vmin = $("#vmin").css("width", "60vmin");
+            if (vmin.width() == 0) vmin.addClass("fail");
+
+            var vmax = $("#vmax").css("width", "60vmax");
+            if (vmax.width() == 0) vmax.addClass("fail");
+
+            var inch = $("#inch").css("width", "4in");
+            if (inch.width() == 0) inch.addClass("fail");
+
+            var cm = $("#cm").css("width", "20cm");
+            if (cm.width() == 0) cm.addClass("fail");
+
+            var mm = $("#mm").css("width", "200mm");
+            if (mm.width() == 0) mm.addClass("fail");
+
+            var pt = $("#pt").css("width", "120pt");
+            if (pt.width() == 0) pt.addClass("fail");
+
+            var pc = $("#pc").css("width", "40pc");
+            if (pc.width() == 0) pc.addClass("fail");
+
+            var ex = $("#ex").css("width", "60ex");
+            if (ex.width() == 0) ex.addClass("fail");
+
+            var ch = $("#ch").css("width", "60ch");
+            if (ch.width() == 0) ch.addClass("fail");
+        </script>
+    </body>  
+</html>

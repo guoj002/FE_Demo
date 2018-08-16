@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>em rem</title>
+        <style type="text/css">
+            /*html {
+                font-size: 30px;
+            }*/
+            :root {
+                font-size: 30px;
+            }
+            body {
+                font-size: 14px;
+            }
+            div.em {
+                font-size: 1.2em;
+            }
+            div.rem {
+                font-size: 1.2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="em">
+            Test <!-- 14 * 1.2 = 16.8px -->
+            <div class="em">
+                Test <!-- 16.8 * 1.2 = 20.16px -->
+                <div class="em">
+                    Test <!-- 20.16 * 1.2 = 24.192px -->
+                </div>
+            </div>
+        </div>
+        <div  class="rem">
+            Test <!-- 30 * 1.2 = 36px -->
+            <div  class="rem">
+                Test <!-- 30 * 1.2 = 36px -->
+                <div  class="rem">
+                    Test <!-- 30 * 1.2 = 36px -->
+                </div>
+            </div>
+        </div>
+        <p>em 是相对于当前父元素的字体大小为标准</p>
+        <p>rem 是相对于 html 元素的字体大小为标准</p>
+        <ul>
+            <li>font-size使用rem</li>
+            <li>border使用px</li>
+            <li>padding、margin、border-radius等使用em</li>
+            <li>容器的宽度使用百分比</li>
+        </ul>
+    </body>
+</html>

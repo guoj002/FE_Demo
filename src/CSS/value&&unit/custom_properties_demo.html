@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS变量</title>
+	<style type="text/css">
+		:root {
+			--main-font: Helvetica, Arial, sans-serif;
+			--brand-color: #369;
+			--main-bg: #fff;
+			--main-color: #000; 
+		}
+
+		p {
+			/*font-family: var(--main-font);
+			color: var(--brand-color);*/
+			font-family: var(--main-font, sans-serif);
+			color: var(--brand-color, red);
+		}
+		span {
+			color: var(--secondary-color, red);
+		}
+
+		.dark {
+			margin-top: 2em;
+			padding: 1em;
+			background-color: #999;
+			--main-bg: #333;
+			--main-color: #fff;
+		}
+
+		.panel {
+			font-size: 1rem;
+			padding: 1em;
+			border: 1px solid #999;
+			border-radius: 0.5em;
+			background-color: var(--main-bg);
+			color: var(--main-color);
+		}
+
+		.panel > h2 {
+			margin-top: 0;
+			font-size: 0.8em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+	</style>
+</head>
+<body>
+	<h3>自定义属性/CSS变量</h3>
+	<p>为了和其他属性区分开，命名的前缀必须是两道横杠（--），然后写上你想要的名字</p>
+	<p>用一个叫作var()的函数去引用自定义属性的值</p>
+	<span>var()函数支持第二个参数，代表一个默认值。假如一个变量被声明的时候，第一个参数没有被声明，那么第二个参数值就会被引用</span>
+	<p>如果var()被定义为一个无效值，这个属性会被定义为它的初始值。</p>
+
+	<div class="panel">
+		<h2>Single-origin</h2>
+		<div class="body">
+			We have built partnerships with small farms
+			around the world to hand-select beans at the
+			peak of season. We then careful roast in
+			small batches to maximize their potential.
+		</div>
+	</div>
+
+	<aside class="dark">
+		<div class="panel">
+			<h2>Single-origin</h2>
+			<div class="body">
+				We have built partnerships with small farms
+				around the world to hand-select beans at the
+				peak of season. We then careful roast in
+				small batches to maximize their potential.
+			</div>
+		</div>
+	</aside>
+
+	<script type="text/javascript">
+		
+		var rootElement = document.documentElement;
+		var styles = getComputedStyle(rootElement);
+		var mainColor = styles.getPropertyValue('--main-bg');
+
+		rootElement.style.setProperty('--main-bg', '#cdf');
+
+		console.log(String(mainColor).trim());
+
+	</script>
+
+</body>
+</html>

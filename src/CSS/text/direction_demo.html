@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		div {
+			width: 300px;
+			height: 150px;
+			margin: 50px auto;
+			background: lightgray;
+		}
+		p {
+			margin: 10px 0;
+			background: greenyellow;
+		}
+		span {
+			background: greenyellow;
+		}
+		p.ltr {
+			direction: ltr;
+		}
+		p.rtl {
+			direction: rtl;
+		}
+		p.rtl1 {
+			unicode-bidi: embed;
+			direction: rtl;
+		}
+		p.rtl2 {
+			unicode-bidi: bidi-override;
+			direction: rtl;
+			color: red;
+		}
+
+		p.inherit {
+			direction: inherit;
+		}
+
+		span.s1 {
+			unicode-bidi: embed;
+			direction: rtl;
+		}
+		span.s2 {
+			unicode-bidi: bidi-override;
+			direction: rtl;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p class="ltr">一二三四五六七八九十</p>
+		<p class="rtl">一二三四五六七八九十</p>
+		<p class="rtl1">一二三四五六七八九十</p>
+		<p class="rtl2">一二三四五六七八九十</p>
+		<p class="inherit">一二三四五六七八九十</p>
+	</div>
+	<div>
+		<span class="s1">一二三四五六七八九十</span>
+	</div>
+	<div>
+		<span class="s2">一二三四五六七八九十</span>
+	</div>
+
+</body>
+</html>

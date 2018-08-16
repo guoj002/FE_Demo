@@ -4,47 +4,77 @@
 	<title></title>
 	<style type="text/css">
 		div {
+			width: 500px;
 			height: 30px;
 			line-height: 30px;
+			margin: 30px auto;
 			font-size: 25px;
 			background: lightgreen;
 		}
 		img {
 			width: 10px;
 			height: 10px;
-			/*vertical-align: auto;*/
 		}
 		.flex-bar {
-			display: inline-flex;
+			display: flex;
 			align-items: center;
 		}
-		.block-bar1 {
-			display: inline-block;
+		.block-bar {
 			/*vertical-align: middle;*/
 		}
-		.block-bar1 span{
-			display: inline-block;
+		.block-bar1 *{
 			vertical-align: middle;
 		}
-		.block-bar img {
-			display: inline-block;
-			vertical-align: middle;
+
+		.testdiv *{
+			vertical-align:middle;
 		}
+
+		.testIMG{
+			float:left;
+			margin-top:10px;
+		} 
+		.testTXT{
+			float:left;
+		}
+
+	 	.testdiv .testTXT{
+	 		height:60px;
+	 		line-height:60px;
+	 		padding-left:65px;
+	 		background:url(../../IMG/titlebg3.png) no-repeat left center
+	 	}
+
 	</style>
 </head>
 <body>
 	<div class="flex-bar">
-		<img src="../IMG/titlebg3.png" >TEXT文字文字flex
+		<img src="../../IMG/titlebg3.png" >TEXT文字文字flex
 	</div>
-	<hr />
 	<div class="block-bar">
-		<img src="../IMG/titlebg3.png" >TEXT文字文字block
+		<img src="../../IMG/titlebg3.png" >TEXT文字文字block
 	</div>
-	<hr />
+	<div class="block-bar">
+		<img src="../../IMG/titlebg3.png" ><span>TEXT文字文字block_span</span>
+	</div>
+
 	<div class="block-bar1">
-		<img src="../IMG/titlebg3.png" ><span>TEXT文字文字block_span</span>
+		<img src="../../IMG/titlebg3.png" >TEXT文字文字block
 	</div>
-	<hr />
+	<div class="block-bar1">
+		<img src="../../IMG/titlebg3.png" ><span>TEXT文字文字block_span</span>
+	</div>
+
+	<div>
+		<img src="../../IMG/titlebg3.png" alt="这里是图片" class="testIMG" />
+		<span class="testTXT">TEXT文字文字float+margin</span>
+	</div>
+
+	<div class="testdiv">
+		<div class="testTXT">
+			<span>这里是文字,看看文字对齐了没</span>
+		</div>
+	</div>
 
 </body>
 </html>

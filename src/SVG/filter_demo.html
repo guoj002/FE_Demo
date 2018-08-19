@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>filter demo</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		svg {
+			margin: 10px;
+			background: lightgray;
+		}
+	</style>
+</head>
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="f1" x="0" y="0">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+			</filter>
+		</defs>
+		<rect
+			width="90"
+			height="90"
+			stroke="green" stroke-width="3" fill="yellow" 
+			filter="url(#f1)"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="f2" x="0" y="0" width="200%" height="200%">
+				<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+				<feBlend in="SourceGraphic" in2="offOut" mode="normal" />
+			</filter>
+		</defs>
+		<rect
+			width="90"
+			height="90"
+			stroke="green" stroke-width="3" fill="yellow"
+			filter="url(#f2)"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="f3" x="0" y="0" width="200%" height="200%">
+				<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+				<feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+				<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+			</filter>
+		</defs>
+		<rect
+			width="90"
+			height="90"
+			stroke="green" stroke-width="3" fill="yellow"
+			filter="url(#f3)"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="f4" x="0" y="0" width="200%" height="200%">
+				<feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+				<feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+				<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+			</filter>
+		</defs>
+		<rect
+			width="90"
+			height="90"
+			stroke="green" stroke-width="3" fill="yellow"
+			filter="url(#f4)"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="f5" x="0" y="0" width="200%" height="200%">
+				<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+				<feColorMatrix result="matrixOut" in="offOut" type="matrix"
+					values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+				<feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+				<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+			</filter>
+		</defs>
+		<rect
+			width="90"
+			height="90"
+			stroke="green" stroke-width="3" fill="yellow"
+			filter="url(#f5)"
+		/>
+	</svg>
+</body>
+</html>

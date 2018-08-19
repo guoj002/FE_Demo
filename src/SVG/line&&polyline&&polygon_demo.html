@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>line polyline polygon demo</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		svg {
+			width: 300px;
+			height: 250px;
+			margin: 10px;
+			background: lightgray;
+		}
+	</style>
+</head>
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<line
+			x1="10"
+			y1="10"
+			x2="200"
+			y2="140"
+			style="stroke:red; stroke-width:2;"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<polyline
+			points="20,20 40,25 60,40 80,120 120,140 140,140"
+			style="fill:none; stroke:black; stroke-width:3;"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<polyline
+			points="20,20 40,25 60,40 80,120 120,140 140,140"
+			style="fill:white; stroke:black; stroke-width:3;"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<polyline
+			points="0,40 40,40 40,80 80,80 80,120 120,120 120,160"
+			style="fill:none; stroke:red; stroke-width:4;"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<polygon
+			points="200,10 250,140 160,145"
+			style="fill:none; stroke:purple; stroke-width:1;"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<polygon
+			points="200,10 250,190 160,210"
+			style="fill:lime; stroke:purple; stroke-width:1;"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<polygon
+			points="220,10 300,210 170,250 123,234"
+			style="fill:lime; stroke:purple; stroke-width:1;"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<polygon
+			points="100,10 40,180 190,60 10,60 160,180"
+			style="fill:lime; stroke:purple; stroke-width:5; fill-rule:nonzero;"
+		/>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  		<polygon
+  			points="100,10 40,180 190,60 10,60 160,180"
+  			style="fill:lime; stroke:purple; stroke-width:5; fill-rule:evenodd;"
+  		/>
+	</svg>
+</body>
+</html>

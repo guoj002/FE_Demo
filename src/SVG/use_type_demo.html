@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>svg使用方式</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			display: flex;
+			/*justify-content: space-around;*/
+			flex-wrap: wrap;
+		}
+		div {
+			width: 30%;
+			margin: 10px;
+			display: inline-flex;
+			flex-direction: column;
+			background: greenyellow;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span>使用 embed 标签</span>
+		<embed src="circle.svg" type="image/svg+xml" />
+	</div>
+	<div>
+		<span>使用 object 标签</span>
+		<object data="circle.svg" type="image/svg+xml"></object>
+	</div>
+	<div>
+		<span>使用 iframe 标签</span>
+		<iframe src="circle.svg"></iframe>
+	</div>
+	<div>
+		<span>链接到SVG文件</span>
+		<a href="circle.svg">View SVG file</a>
+	</div>
+	<div>
+		<span>直接在HTML嵌入SVG代码</span>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		   <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+		</svg>
+	</div>
+</body>
+</html>

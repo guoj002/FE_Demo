@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>filter button demo</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+/*		body {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		svg {
+			margin: 10px;
+			background: lightgray;
+		}*/
+		.svg-filters {
+			position: absolute;
+			visibility: hidden;
+			width: 1px;
+			height: 1px;
+		}
+		.button1 {
+			width: 200px;
+			height: 60px;
+			color: white;
+			background: black;
+			margin-right: 10px;
+		}
+		.button {
+			filter: url("#filter");
+			width: 200px;
+			height: 60px;
+			color: white;
+			background: black;
+		}
+
+		.menu {
+			/* other styles */
+
+			-webkit-filter: url("#goo");
+			filter: url("../menu.html#goo");
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
+		<defs>
+			<filter id="filter">
+				<feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
+				<feDisplacementMap
+					xChannelSelector="R"
+					yChannelSelector="G"
+					scale="30"
+					in="SourceGraphic"
+					in2="warp"
+				/>
+			</filter>
+		</defs>
+	</svg>
+
+	<button class="button1">Click me</button>
+	<button class="button">Click me</button>
+
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix
+					in="blur" mode="matrix"
+					values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+			</filter>
+		</defs>
+	</svg>
+
+	<div class="menu">
+		<div class="menu-wrapper">
+			<ul class="menu-items">
+				<li class="menu-item">
+					<button class="menu-item-button">
+						<i class="menu-item-icon icon icon-reply"></i>
+					</button>
+					<div class="menu-item-bounce"></div>
+				</li>
+				<li class="menu-item">
+					<button class="menu-item-button">
+						<i class="menu-item-icon icon icon-box"></i>
+					</button>
+					<div class="menu-item-bounce"></div>
+				</li>
+				<li class="menu-item">
+					<button class="menu-item-button">
+						<i class="menu-item-icon icon icon-trash"></i>
+					</button>
+					<div class="menu-item-bounce"></div>
+				</li>
+			</ul>
+			<button class="menu-toggle-button">
+				<i class="fa fa-plus menu-toggle-icon"></i>
+			</button>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -28,7 +28,7 @@
 	</style>
 </head>
 <body>
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<svg>
     	<path d="M150, 0 L75, 200 L225, 200 Z" style="fill:none; stroke:greenyellow; stroke-width:2" />
     	<circle cx=150 cy=0 r=3 fill=red />
     	<circle cx=75 cy=200 r=3 fill=red />
@@ -36,7 +36,16 @@
     	<text x=10 y=20>绝对定位（坐标）</text>
 	</svg>
 
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<svg>
+    	<path d="M150, 0 L75, 200 L225, 200 " style="fill:none; stroke:greenyellow; stroke-width:2" />
+    	<circle cx=150 cy=0 r=3 fill=red />
+    	<circle cx=75 cy=200 r=3 fill=red />
+    	<circle cx=225 cy=200 r=3 fill=red />
+    	<text x=10 y=20>绝对定位（坐标）</text>
+	</svg>
+
+
+	<svg>
     	<path d="M150, 0 l-75, 200 l150, 0 Z" style="fill:none; stroke:greenyellow; stroke-width:2" />
     	<circle cx=150 cy=0 r=3 fill=red />
     	<circle cx=75 cy=200 r=3 fill=red />
@@ -44,11 +53,16 @@
     	<text x=10 y=20>相对定位（方向）</text>
 	</svg>
 
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<svg>
+    	<path d="M75,120 A1,1 0 0,0 100,0" style="fill:none; stroke:lightblue; stroke-width:2" />
     	<path d="M75,20 a1,1 0 0,0 100,0" style="fill:none; stroke:greenyellow; stroke-width:2" />
-    	<circle cx=75 cy=20 r=3 fill=red />
+    	<!-- <circle cx=75 cy=20 r=3 fill=red />
     	<circle cx=1 cy=1 r=3 fill=red />
-    	<circle cx=100 cy=0 r=3 fill=red />
+    	<circle cx=100 cy=0 r=3 fill=red /> -->
+	</svg>
+
+	<svg class="svg1">
+		<path d="M70,20 v250 M120,20 v250 M170,20 v250 stroke="blue" stroke-width="2" />
 	</svg>
 	
 	<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svg1">
@@ -86,6 +100,17 @@
 				C186 384 211 361 211 334
 				C211 300 186 274 156 274"
 			style="fill:white;stroke:greenyellow;stroke-width:2"
+		/>
+	</svg>
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="150" class="svg2">
+		<path
+			d="M 100 350 q 150 -300 300 0"
+			style="fill:none; stroke:lightblue; stroke-width:5;"
+		/>
+		<path
+			d="M 100 150 Q 150 -300 300 0"
+			style="fill:none; stroke:lightgreen; stroke-width:5;"
 		/>
 	</svg>
 

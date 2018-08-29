@@ -9,7 +9,6 @@
 		}
 		body {
 			display: flex;
-			/*justify-content: space-around;*/
 			flex-wrap: wrap;
 		}
 		div {
@@ -17,7 +16,7 @@
 			margin: 10px;
 			display: inline-flex;
 			flex-direction: column;
-			background: greenyellow;
+			background: lightgray;
 		}
 	</style>
 </head>
@@ -28,11 +27,11 @@
 	</div>
 	<div>
 		<span>使用 object 标签</span>
-		<object data="circle.svg" type="image/svg+xml"></object>
+		<object data="circle.svg" type="image/svg+xml" ></object>
 	</div>
 	<div>
 		<span>使用 iframe 标签</span>
-		<iframe src="circle.svg"></iframe>
+		<iframe src="circle.svg" ></iframe>
 	</div>
 	<div>
 		<span>链接到SVG文件</span>
@@ -40,7 +39,7 @@
 	</div>
 	<div>
 		<span>直接在HTML嵌入SVG代码</span>
-		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<svg>
 		   <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
 		</svg>
 	</div>

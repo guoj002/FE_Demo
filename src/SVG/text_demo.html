@@ -18,12 +18,30 @@
 	</style>
 </head>
 <body>
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<svg>
 		<text x="0" y="15" fill="red">I love SVG</text>
 	</svg>
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<svg>
+		<text x="0" y="15" fill="red" stroke="black">I love SVG</text>
+	</svg>
+
+	<svg>
 		<text x="0" y="15" fill="red" transform="rotate(30 20,40)">I love SVG</text>
 	</svg>
+
+	<svg>
+	    <text fill="#ffffff" font-size="45" font-family="Verdana" x="65" y="75">SVG</text>
+	</svg>
+
+	<svg>
+		<defs>
+			<path id="path1" d="M75,20 a1,1 0 0,0 100,0" />
+		</defs>
+		<text x="10" y="100" style="fill:red;">
+			<textPath href="#path1">I love SVG I love SVG</textPath>
+		</text>
+	</svg>
+
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<defs>
 			<path id="path1" d="M75,20 a1,1 0 0,0 100,0" />
@@ -32,22 +50,16 @@
 			<textPath xlink:href="#path1">I love SVG I love SVG</textPath>
 		</text>
 	</svg>
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
-		<defs>
-			<path id="path1" d="M75,20 a1,1 0 0,0 100,0" />
-		</defs>
-		<text x="10" y="100" style="fill:red;">
-			<textPath href="#path1">I love SVG I love SVG</textPath>
-		</text>
-	</svg>
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+	<svg>
 		<text x="10" y="20" style="fill:red;">
 			Several lines:
 			<tspan x="10" y="45">First line</tspan>
 			<tspan x="10" y="70">Second line</tspan>
 		</text>
 	</svg>
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+	<svg>
 		<a href="http://www.baidu.com/" target="_blank">
 			<text x="0" y="15" fill="red">go to baidu.com</text>
 		</a>

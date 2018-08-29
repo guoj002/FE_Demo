@@ -22,27 +22,26 @@
 <body>
 	<!-- animate -->
 	<svg>
-		<rect x="10" y="10" width="50" height="50" fill="#feac5e">
+	    <circle cx="30" cy="50" r="15" fill="blue" stroke="black" stroke-width="1">
+	        <animate attributeName="cx" from="30" to="100" dur="5s" repeatCount="indefinite" />
+	    </circle>
+	</svg>
+	<svg>
+		<rect x="10" y="10" width="50" height="50" fill="orange">
 			<animate attributeName="x" from="0" to="200" dur="2s" repeatCount="indefinite" />
 		</rect>
 	</svg>
 	<svg>
-		<rect x="10" y="10" width="50" height="50" fill="#feac5e">
+		<rect x="10" y="10" width="50" height="50" fill="orange">
 			<animate attributeName="width" to="200" dur="2s" repeatCount="indefinite" />
 		</rect>
 	</svg>
 
 	<svg>
-		<rect x="10" y="10" width="250" height="50" fill="#feac5e">
+		<rect x="10" y="10" width="250" height="50" fill="orange">
 			<animate attributeName="x" from="0" to="200" dur="2s" repeatCount="indefinite" />
 			<animate attributeName="width" to="50" dur="2s" repeatCount="indefinite" />
 		</rect>
-	</svg>
-
-	<svg>
-	    <circle cx="30" cy="50" r="15" fill="blue" stroke="black" stroke-width="1">
-	        <animate attributeName="cx" from="30" to="100" dur="5s" repeatCount="indefinite" />
-	    </circle>
 	</svg>
 
 	<!-- animateTransform -->

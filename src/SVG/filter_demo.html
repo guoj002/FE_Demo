@@ -21,14 +21,44 @@
 	<svg>
 		<defs>
 			<filter id="f1" x="0" y="0">
-				<feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+				<feGaussianBlur in="SourceGraphic" stdDeviation="8" />
+			</filter>
+			<filter id="f1" x="0" y="0">
+				<feGaussianBlur in="SourceAlpha" stdDeviation="8" />
 			</filter>
 		</defs>
 		<rect
-			width="90" height="90" x=25 y=25
-			stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)"
+			x=25 y=25 width="70" height="90"
+			stroke="lightgreen" stroke-width="3" fill="lightyellow"
+		/>
+		<rect
+			x=105 y=25 width="70" height="90"
+			stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f1)"
+		/>
+		<rect
+			x=205 y=25 width="70" height="90"
+			stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f2)"
 		/>
 	</svg>
+
+	<svg>
+		<defs>
+			<filter id="f2" x="0" y="0"> <feGaussianBlur in="SourceGraphic" stdDeviation="0" /> </filter> 
+			<filter id="f3" x="0" y="0"> <feGaussianBlur in="SourceGraphic" stdDeviation="1" /> </filter>
+			<filter id="f4" x="0" y="0"> <feGaussianBlur in="SourceGraphic" stdDeviation="2" /> </filter>
+			<filter id="f5" x="0" y="0"> <feGaussianBlur in="SourceGraphic" stdDeviation="4" /> </filter>
+			<filter id="f6" x="0" y="0"> <feGaussianBlur in="SourceGraphic" stdDeviation="8" /> </filter>
+			<filter id="f7" x="0" y="0"> <feGaussianBlur in="SourceGraphic" stdDeviation="16" /> </filter>
+		</defs>
+		<rect x=5 y=25 width="30" height="90" stroke="lightgreen" stroke-width="3" fill="lightyellow" />
+		<rect x=45 y=25 width="30" height="90" stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f2)"/>
+		<rect x=85 y=25 width="30" height="90" stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f3)"/>
+		<rect x=125 y=25 width="30" height="90" stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f4)"/>
+		<rect x=165 y=25 width="30" height="90" stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f5)"/>
+		<rect x=205 y=25 width="30" height="90" stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f6)"/>
+		<rect x=245 y=25 width="30" height="90" stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f7)"/>
+	</svg>
+
 
 	<svg>
 		<defs>
@@ -37,7 +67,8 @@
 			</filter>
 		</defs>
 		<ellipse
-			cx="150" cy="75" rx="70" ry="40"
+			cx="150" cy="75"
+			rx="70" ry="40"
 			style="fill:#ff0000;stroke:#000000;stroke-width:2;filter:url(#Gaussian_Blur)"
 		/>
 	</svg>
@@ -56,34 +87,34 @@
 
 	<svg>
 		<defs>
-			<filter id="f2" x="0" y="0" width="200%" height="200%">
+			<filter id="f11" x="0" y="0" width="200%" height="200%">
 				<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
 				<feBlend in="SourceGraphic" in2="offOut" mode="normal" />
 			</filter>
-		</defs>
-		<rect
-			width="90" height="90"
-			stroke="green" stroke-width="3" fill="yellow" filter="url(#f2)"
-		/>
-	</svg>
-
-	<svg>
-		<defs>
-			<filter id="f3" x="0" y="0" width="200%" height="200%">
-				<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
-				<feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+			<filter id="f12" x="0" y="0" width="200%" height="200%">
+				<feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
 				<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
 			</filter>
 		</defs>
 		<rect
 			width="90" height="90"
-			stroke="green" stroke-width="3" fill="yellow" filter="url(#f3)"
+			stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f11)"
+		/>
+		<rect
+			x=130
+			width="90" height="90"
+			stroke="lightgreen" stroke-width="3" fill="lightyellow" filter="url(#f12)"
 		/>
 	</svg>
 
 	<svg>
 		<defs>
-			<filter id="f4" x="0" y="0" width="200%" height="200%">
+			<filter id="f21" x="0" y="0" width="200%" height="200%">
+				<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+				<feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+				<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+			</filter>
+			<filter id="f22" x="0" y="0" width="200%" height="200%">
 				<feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
 				<feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
 				<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
@@ -91,13 +122,18 @@
 		</defs>
 		<rect
 			width="90" height="90"
-			stroke="green" stroke-width="3" fill="yellow" filter="url(#f4)"
+			stroke="green" stroke-width="3" fill="yellow" filter="url(#f21)"
+		/>
+		<rect
+			x=130
+			width="90" height="90"
+			stroke="green" stroke-width="3" fill="yellow" filter="url(#f22)"
 		/>
 	</svg>
 
 	<svg>
 		<defs>
-			<filter id="f5" x="0" y="0" width="200%" height="200%">
+			<filter id="f31" x="0" y="0" width="200%" height="200%">
 				<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
 				<feColorMatrix result="matrixOut" in="offOut" type="matrix"
 					values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
@@ -107,7 +143,7 @@
 		</defs>
 		<rect
 			width="90" height="90"
-			stroke="green" stroke-width="3" fill="yellow" filter="url(#f5)"
+			stroke="green" stroke-width="3" fill="yellow" filter="url(#f31)"
 		/>
 	</svg>
 </body>

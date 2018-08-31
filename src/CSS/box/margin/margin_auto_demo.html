@@ -3,26 +3,67 @@
 <head>
 	<title></title>
 	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
 		body {
 			background: lightgray;
 		}
 		div {
-			height: 50px;
+			height: 100px;
 			margin: 100px 10%;
 			border-radius: 10px;
 			text-align: center;
 			background: greenyellow;
 		}
 		.vertical1 {
-			line-height: 50px;
+			/*line-height: 50px;*/
 		}
 		.vertical2 {
 			vertical-align: middle;
 		}
+		p {
+			width: auto;
+			height: 80px;
+			/*margin-left: auto;*/
+			/*margin-right: 100px;*/
+			background: lightblue;
+		}
+		.p1, .p2 {
+			/*display: inline-block;*/
+			height: 20px;
+			width: 50%;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+		ul {
+			background: greenyellow;
+			margin-bottom: 100px;
+			border: 1px solid black;
+		}
+		li {
+			width: 50%;
+			margin-top: 10px;
+			margin-bottom: 15px;
+			background: lightblue;
+			border: 1px solid;
+		}
 	</style>
 </head>
 <body>
-	<div class="vertical1">吾与城北乌拉拉孰美？</div>
+	<div class="vertical1"><p>吾与城北乌拉拉孰美？</p></div>
 	<div class="vertical2"><span>吾与城北乌拉拉孰美？</span></div>
+	<div>
+		<p class="p1">坍塌</p>
+		<p class="p2">bbb</p>
+	</div>
+	<ul>
+		<li>lalalla</li>
+		<li>lalalla</li>
+		<li>lalalla</li>
+		<li>lalalla</li>
+		<li>lalalla</li>
+	</ul>
 </body>
 </html>

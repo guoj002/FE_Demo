@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		div {
+			width: 300px;
+			height: 300px;
+			margin: 10px;
+			background-color: greenyellow;
+			/*background-repeat: no-repeat;*/
+			/*background-image: url('../../../IMG/success.png');*/
+		}
+
+		div.img1 {background-repeat: repeat-x; }
+		div.img2 {background-repeat: repeat-y; }
+		div.img3 {background-repeat: no-repeat; }
+		div.img4 {background-repeat: repeat; }
+		div.img5 {background-repeat: inherit; }
+		div.img6 {background-position: inherit; }
+		div.img7 {background-position: 50%; }
+		div.img8 {background-position: 0% 0%; }
+		div.img9 {background-position: 100% 100%; }
+		div.img10 {background-position: 100% 100%; overflow: auto;}
+		.content {
+			width: 290px; height: 200px;
+			margin: 10px auto;
+			background-color: white;
+			background-repeat: no-repeat;
+			background-image: url('../../../IMG/fail.png');
+			background-position: center;
+			/*background-attachment: fixed;*/
+		}
+
+	</style>
+</head>
+<body>
+	<div class="img1"></div>
+	<div class="img2"></div>
+	<div class="img3"></div>
+	<div class="img4"></div>
+	<div class="img5"></div>
+	<div class="img6"></div>
+	<div class="img7"></div>
+	<div class="img8"></div>
+	<div class="img9"></div>
+	<div class="img10">
+		<div class="content"></div>
+	</div>
+</body>
+</html>

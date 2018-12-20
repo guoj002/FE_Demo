@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			
+			body {
+			  height: 100%;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			}
+
+			.wrapper {
+				margin: 100px auto;
+			}
+
+			.bg {
+				background-color: rgb(255, 0, 0);
+				animation: loading 10s linear infinite;
+			}
+
+			@keyframes loading {
+			  0% {
+			    width: 0;
+			  }
+			  100% {
+			    width: 100%;
+			  }
+			}
+
+			.text {
+			 	width: 200px;
+			 	border: 1px solid rgb(255, 0, 0);
+			}
+
+			.text:after {
+				content: "0%";
+			    display: block;
+			    padding: 10px 0 10px 20px;
+			    font-size: 50px;
+			    text-align: center;
+			    color: rgb(255,0,0);
+			    mix-blend-mode: difference;
+			    animation: percentage 10s linear infinite;
+			}
+
+			@keyframes percentage {
+			  0% {
+			    content: "0%";
+			  }
+			  10% {
+			    content: "10%"; 
+			  }
+			  20% {
+			    content: "20%"; 
+			  }
+			  30% {
+			    content: "30%"; 
+			  }
+			  40% {
+			    content: "40%"; 
+			  }
+			  50% {
+			    content: "50%"; 
+			  }
+			  60% {
+			    content: "60%"; 
+			  }
+			  70% {
+			    content: "70%"; 
+			  }
+			  80% {
+			    content: "80%"; 
+			  }
+			  90% {
+			    content: "90%"; 
+			  }
+			  100% {
+			    content: "100%";
+			  }
+			}
+
+		</style>
+	<body>
+		<div class="wrapper">
+			<div class="bg">
+				<div class="text"></div>
+			</div>
+		</div>
+	</body>
+</html>

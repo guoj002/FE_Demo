@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			background: url(http://csssecrets.io/images/code-pirate.svg)
+			            no-repeat bottom right #58a;/*bootem rigth 为回退方案*/
+
+			background-position: right 20px bottom 10px; /*1*/
+
+			/*background-position默认是以padding box的左上角为准的。
+			但是可以用background-origin改变这种默认。让背景跟着contentt-box定位。*/
+			/*background-origin: content-box; /*2*/*/
+			
+			background-position: calc(100% - 20px) calc(100% - 10px); /*3*/
+			
+			/* Styling */
+			max-width: 10em;
+			min-height: 5em;
+			padding: 10px;
+			color: white;
+			font: 100%/1 sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

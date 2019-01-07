@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+        div {
+            height:100px;
+            width:400px;
+        }
+        /* 径向渐变主体 */ 
+        .raidal {
+            height:100px;
+            width:100px;
+            /*同理联想到径向渐变，同样缩小渐变圈，直至重合，靠近圆心的颜色设成transparent。*/
+            background:radial-gradient(transparent 50%, blue 50%);
+        }
+        .raidal0 {
+            height:100px;
+            width:100px;
+            /*径向渐变是可以设置半径圆心位置的，所以设到左顶角，left top 调整半径大小为 200px，就发现背景透明的内凹圆角实现了。*/
+            background:radial-gradient(100px at left top, transparent 50%, blue 50%);
+        }
+        /*同理四个方向， 调整圆心位置即可*/
+        /* 左上 */ 
+        .raidal1 {
+            height:100px;
+            width:100px;
+            background:radial-gradient(200px at left top, transparent 50%, blue 50%);
+        }
+        /* 右上 */ 
+        .raidal2 {
+            height:100px;
+            width:100px;
+            background:radial-gradient(200px at right top, transparent 50%, blue 50%);
+        }
+        /* 右下 */ 
+        .raidal3 {
+            height:100px;
+            width:100px;
+            background:radial-gradient(200px at right bottom, transparent 50%, blue 50%);
+        }
+        /* 左下 */
+        .raidal4 {
+            height:100px;
+            width:100px;
+            background:radial-gradient(200px at left bottom, transparent 50%, blue 50%);
+        }
+        /*同样，不想这么圆角，也是可以椭圆的，半径设两个参数， 就是椭圆。*/
+        /* 左上 */ 
+        .ellipse {
+            height:300px;
+            width:300px;
+            background:radial-gradient(200px 300px at left top, transparent 50%, blue 50%);
+        }
+        .egg {
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: radial-gradient(at 35px 35px, #FFF, #CCC, #FFF);
+        }
+        .radius {
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(200px at 50px 0px, #fff 50px, blue 50px);
+        }
+        .corner1 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            background: radial-gradient(20px at 100px 0px, #fff 10px, blue 1px, #fff 13px);
+        }
+        .corner2 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            background: radial-gradient(20px at 0px 0px, #fff 10px, blue 1px, #fff 13px);
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <p>CSS-论css如何纯代码实现内凹圆角</p>  
+    <div class='raidal'>径向渐变主体</div>
+    <div class='raidal0'>径向渐变主体</div>
+    <div class='raidal1'>左上</div> 
+    <div class='raidal2'>右上</div>
+    <div class='raidal3'>右下</div>
+    <div class='raidal4'>左下</div>
+    <div class='ellipse'>左上</div>
+    <span class="radius">右上</span>
+    <span class="egg"></span>
+    
+    <span class="corner1">角落</span>
+    <span class="corner2">角</span>
+</body>
+</html>

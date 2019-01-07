@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        .green{
+            width: 100px;
+            height: 100px;
+            background-color:#a0ee00;
+            text-align: center;
+            float: left;
+            margin: 20px;
+            line-height:100px;
+        }
+        .myDiv{
+            opacity: 0;
+            transition:all ease 1s;
+        }
+        .myDiv:hover{
+            opacity: 1;
+        }
+        .show{
+            opacity: 0;
+            animation:showtime infinite 4s;
+        }
+        @keyframes showtime{
+            25%{
+                opacity: 0.5;
+            }
+            50%{
+                opacity: 1;
+            }
+            75%{
+                opacity: 0.5;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        /*.haorooms-small {
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+            clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+        }*/
+    </style>
+</head>
+<body>
+    <div class="green">1</div>
+    <div class="myDiv green">2</div>
+    <div class="green">3</div>
+    <div class="haorooms-small" style="background-image: url('http://sandbox.runjs.cn/uploads/rs/216/0y89gzo2/idtga8h3.png');">
+    <div class="show green">4</div>
+</body>
+</html>

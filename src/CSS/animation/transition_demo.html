@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+		div {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			background: yellowgreen;
+			/*transition: 1s;*/
+		}
+		div:hover {
+			width: 400px;
+			height: 200px;
+			background: lightblue;
+			/*transition: 1s;*/
+		}
+		.div1 {
+			transition: 5s;
+		}
+		.div2 {
+			transition: 1s height;
+		}
+		.div3 {
+			transition: 1s height, 2s width;
+		}
+		/*delay 延迟 delay的真正意义在于，它指定了动画发生的顺序，使得多个不同的transition可以连在一起，形成复杂效果。*/
+		.div4 {
+			transition: 1s height, 2s 1s width;
+		}
+		.div5 {
+			transition: 2s width, 1s 2s height;
+		}
+		.div5:hover {
+			transition: 1s height, 2s 1s width;
+		}
+		.div6:hover {
+			transition: 3s;
+		}
+		.div7 {
+			transition: 3s;
+		}
+		.div7:hover {
+			transition: 0s;
+		}
+	</style>
+</head>
+<body>
+	<div class='div1'>1</div>
+	<div class='div2'>2-高1  宽0</div>
+	<div class='div3'>3-高1  宽2</div>
+	<div class='div4'>4-先高 后宽</div>
+	<div class='div5'>5-先高 后宽</div>
+	<div class='div6'>6-慢展 快回</div>
+	<div class='div7'>7-快展 慢回</div>
+</body>
+</html>

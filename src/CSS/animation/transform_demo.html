@@ -11,8 +11,10 @@
 			width: 200px;
 			height: 100px;
 			margin: 30px;
-			background: yellow;
-
+			background: yellowgreen;
+			border: 1px solid lightgray;
+		}
+		.origin {
 			/*顺时针旋转, 旋转基点为中心点*/
 
 			/*设置旋转元素的基点位置*/
@@ -22,44 +24,47 @@
 			/*y-axis: top center bottom length % ;*/
 			/*z-axis: length ;*/
 			transform-origin: 20% 40%;
-
-
+		}
+		.translate {
 			/*移动*/
-			/*transform: translate(25px,25px);*/
+			transform: translate(25px,25px);
 			/*transform: translate3d(x, y, z);*/
 			/*transform: translateX(25px);*/
 			/*transform: translateY(25px);*/
 			/*transform: translateZ(25px);*/
-
+		}
+		.scale {
 			/*缩放*/
-			/*transform: scale(1.1, 1.1);*/
+			transform: scale(1.1, 1.1);
 			/*transform: scale3d(x, y, z);*/
 			/*transform: scaleX(1.1);*/
 			/*transform: scaleY(1.1);*/
 			/*transform: scaleZ(1.1);*/
-
+		}
+		.rotate {
 			/*旋转*/
 			transform: rotate(9deg);
 			/*transform: rotate3d(x, y, z, angle); */
 			/*transform: rotateX(9deg);*/
 			/*transform: rotateY(9deg);*/
 			/*transform: rotateZ(9deg);*/
-
+		}
+		.skew {
 			/*倾斜*/
-			/*transform:skew(10deg,10deg);*/
+			transform:skew(10deg,10deg);
 			/*transform:skewX(10deg);*/
 			/*transform:skewY(10deg);*/
-			
+		}
+		.matrix {
 			/*matrix() 方法把所有 2D 转换方法组合在一起。*/
 			/*matrix() 方法需要六个参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素。*/
 			/*transform: matrix(0.866,0.5,-0.7,0.866,0,0);*/
 			/*transform: matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)*/
-
+		}
+		.perspective {
 			/*为 3D 转换元素定义透视视图*/
 			/*transform: perspective(0);*/
-
-
-		}
+		}	
 		#div1 {
 			position: relative;
 			height: 200px;
@@ -81,7 +86,11 @@
 	</style>
 </head>
 <body>
-	<div>顺时针旋转, 旋转中心为中心点</div>
+	<div>null</div>
+	<div class='translate'>translate</div>
+	<div class='scale'>scale</div>
+	<div class='rotate'>rotate</div>
+	<div class='skew'>skew</div>
 	<div id="div1">
   		<div id="div2">HELLO</div>
 	</div>

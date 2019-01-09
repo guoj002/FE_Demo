@@ -1,0 +1,57 @@
+<!-- transition-timing-function演示 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.trans_box {
+		    padding: 20px;
+			background-color: #f0f3f9;
+			/**zoom:1;*/
+		}
+		.trans_list {
+			width: 10%;
+			height: 64px;
+			margin:10px 0;
+			background-color:#486AAA;
+			color:#fff;
+			text-align:center;
+		}
+		.trans_box:hover .trans_list {
+			margin-left:89%;
+			background-color:#beceeb;
+			color:#333;
+			border-radius:25px;		
+			transform: rotate(360deg);				
+		}
+		.ease {
+			transition: all 4s ease;
+		}
+		/*ease-in由慢到快*/
+		.ease_in {
+			transition: all 4s ease-in;
+		}
+		/*ease-out由快到慢*/
+		.ease_out {
+			transition: all 4s ease-out;
+		}
+		/*ease-in-out由慢到快在到慢*/
+		.ease_in_out {
+			transition: all 4s ease-in-out;
+		}
+		/*linear线性过度*/
+		.linear {
+			transition: all 4s linear;
+		}
+	</style>
+</head>
+<body>
+	<div id="transBox" class="trans_box">
+	    <div class="trans_list ease">ease</div>
+	    <div class="trans_list ease_in">ease-in</div>
+	    <div class="trans_list ease_out">ease-out</div>
+	    <div class="trans_list ease_in_out">ease-in-out</div>
+	    <div class="trans_list linear">linear</div>
+	</div>
+</body>
+</html>

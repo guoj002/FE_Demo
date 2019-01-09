@@ -29,15 +29,70 @@
 			100% { background: lightpink; }
 		}
 		.div2:hover {
-			animation: 1s rainbow 3 forwards;
+			animation: 1s rainbow 3;
 		}
 		.div3:hover {
-			animation: 1s rainbow infinite forwards;
+			animation: 1s rainbow infinite;
 		}
 		/*animation-fill-mode*/
 		/*动画结束以后，会立即从结束状态跳回到起始状态。如果想让动画保持在结束状态，需要使用animation-fill-mode属性。*/
 		.div4:hover {
 			animation: 1s rainbow forwards;
+		}
+		.div5:hover {
+			animation: 1s rainbow reverse 2;
+		}
+		.div6:hover {
+			animation: 1s rainbow steps(10);
+		}
+		/**
+		 * Typing animation with pure CSS. 
+		 * Works best in browsers supporting the ch unit.
+		 */
+
+		@keyframes typing { from { width: 0; } }
+		@keyframes blink-caret { 50% { border-color: transparent; } }
+
+		h1 { 
+			font: bold 200% Consolas, Monaco, monospace;
+			border-right: .1em solid;
+			width: 16.5em; /* fallback */
+			width: 30ch; /* # of chars */
+			margin: 2em 1em;
+			white-space: nowrap;
+			overflow: hidden;
+			animation: typing 20s steps(30, end), /* # of steps = # of chars */
+			           blink-caret .5s step-end infinite alternate;
+		}
+
+		@keyframes spin {
+			to {
+				transform: rotate(1turn);
+			}
+		}
+
+		.div7 {
+			width: 9em;
+			padding: .6em 1em;
+			margin: 1em auto;
+			background: yellowgreen;
+		}
+
+		.div7:hover {
+		    animation: spin 1s linear infinite;
+		}
+
+		.div8 {
+			width: 9em;
+			padding: .6em 1em;
+			margin: 1em auto;
+			background: yellowgreen;
+		    animation: spin 1s linear infinite;
+		    animation-play-state: paused;
+		}
+
+		.div8:hover {
+			animation-play-state: running;
 		}
 		
 	</style>
@@ -47,5 +102,10 @@
 	<div><div class='div2'>变色3次</div></div>
 	<div><div class='div3'>变色循环</div></div>
 	<div><div class='div4'>变色1次 - 结束固定</div></div>
+	<div><div class='div5'>变色1次 - 结束回到第一帧固定</div></div>
+	<div><div class='div6'>变色1次 - 结束固定</div></div>
+	<h1>Typing animation by Lea Verou.</h1>
+	<div><div class='div7'></div></div>
+	<div><div class='div8'></div></div>
 </body>
 </html>

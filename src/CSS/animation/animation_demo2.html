@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img {
+			width: 400px;
+			height: 300px;
+		}
+		@keyframes fadeInOut {
+			0% {
+		        opacity:1;
+		     }
+		    25% {
+		        opacity:0;
+		    }
+		    50% {
+		        opacity: 0;    
+		    }
+		    75% {
+		        opacity:1;
+		    }
+		}
+		.anim_fade_image {
+		    position:absolute;    
+		    animation-name: fadeInOut;
+		    animation-timing-function: ease-in-out;
+		    animation-iteration-count: infinite;
+		    animation-duration: 2s;
+		    animation-direction: alternate;
+		}
+
+		.anim_image {
+		    transition: all 1s ease-in-out;
+		    cursor:pointer;
+		}
+		.anim_image_top {
+		    position: absolute;
+		    transform: scale(0, 0);
+		    opacity: 0;
+		    filter: Alpha(opacity=0);
+		}
+		.anim_box:hover .anim_image_top {
+		    opacity: 1;
+		    filter: Alpha(opacity=100);
+		    transform: scale(1, 1);
+		    transform-origin: top right;        
+		}
+		.anim_box:hover .anim_image_bottom {
+		    transform: scale(0, 0);
+		    transform-origin: bottom left;
+		}
+
+
+		.anim_image1 {
+		    transition: all 1s ease-in-out;
+		    cursor:pointer;
+		}
+		.anim_image_top1 {
+		    position: absolute;
+		    transform:scale(1,0);
+		    opacity: 0;
+		    filter: Alpha(opacity=0);
+		}
+		.anim_box1:hover .anim_image_top1 {
+		    opacity: 1;
+		    filter: Alpha(opacity=100);
+		    transform: scale(1, 1);        
+		}
+		.anim_box1:hover .anim_image_bottom1 {
+		    transform:rotate(360deg) scale(0,0);
+		}
+	</style>
+</head>
+<body>
+	<img class="anim_fade_image" src="../../IMG/img4.jpeg" />
+	<img src="../../IMG/img5.jpeg" />
+	<div class="anim_box">
+	    <img class="anim_image anim_image_top" src="../../IMG/img4.jpeg" />
+	    <img class="anim_image anim_image_bottom" src="../../IMG/img5.jpeg" />
+	</div>
+	<div class="anim_box1">
+	    <img class="anim_image1 anim_image_top1" src="../../IMG/img4.jpeg" />
+	    <img class="anim_image1 anim_image_bottom1" src="../../IMG/img5.jpeg" />
+	</div>
+</body>
+</html>

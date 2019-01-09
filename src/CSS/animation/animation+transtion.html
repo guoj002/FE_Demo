@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img {
+			width: 400px;
+			height: 300px;
+		}
+		.anim_fade_image {
+		    position:absolute;
+		    float: left;
+		    transition: opacity 1s ease-in-out;
+		}
+		.anim_fade_image:hover {
+		    opacity:0;
+		    filter: alpha(opacity=0);
+		}
+		@keyframes updateImg {
+			to {
+				background: url('../../IMG/img5.jpeg') no-repeat center;
+				background-size: 400px 300px;
+			}
+		}
+		.anim_fade_image1 {
+			background: url('../../IMG/img4.jpeg') no-repeat center;
+			background-size: 400px 300px;
+			transition: all 2s;
+		}
+		.anim_fade_image1:hover {
+			animation: updateImg 1.5s;
+		}
+	</style>
+</head>
+<body>
+	<img class="anim_fade_image" src="../../IMG/img4.jpeg" />
+	<img src="../../IMG/img5.jpeg" />
+	<img class="anim_fade_image1" />
+</body>
+</html>

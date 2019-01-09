@@ -1,3 +1,4 @@
+<!-- transtion演示 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,6 +50,19 @@
 		.div7:hover {
 			transition: 0s;
 		}
+		.trans {
+		    display: inline-block;
+		    padding: 1px 8px;
+		    /*transition-property: background-color;
+		    transition-duration: 0.3s;
+		    transition-timing-function: ease;*/
+		    transition: background-color 0.3s ease;
+		}
+		.trans:hover {
+		    background-color: #486AAA;
+		    color: #fff;
+		}
+
 	</style>
 </head>
 <body>
@@ -59,5 +73,6 @@
 	<div class='div5'>5-先高 后宽</div>
 	<div class='div6'>6-慢展 快回</div>
 	<div class='div7'>7-快展 慢回</div>
+	<a href="/" class="trans">经过我~~</a>
 </body>
 </html>

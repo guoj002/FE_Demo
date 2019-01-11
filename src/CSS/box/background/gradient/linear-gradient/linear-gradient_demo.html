@@ -3,27 +3,48 @@
 <head>
 	<title></title>
 	<style type="text/css">
+	body {
+		display: flex;
+		flex-wrap: wrap;
+	}
 	div {
 		width: 300px;
 		height: 300px;
-
+		margin: 5px;
+	}
+	.div1 {
+		background: linear-gradient(135deg, lightgreen 50%, lightblue 0);
+	}
+	.div2 {
 		/*水平*/
-		background: linear-gradient(#fb3 50%, #58a 0);
+		background: linear-gradient(lightgreen 50%, lightblue 0);
 		background-size: 100% 30px;
 
+	}
+	.div3 {
 		/*垂直*/
-		background: linear-gradient(to right, #fb3 50%, #58a 0);
+		background: linear-gradient(to right, lightgreen 50%, lightblue 0);
 		background-size: 30px 100%;
-
+	}
+	.div4 {
 		/*倾斜*/
 		background: linear-gradient(45deg, 
-		              #fb3 25%, #58a 0, #58a 50%,
-		              #fb3 0, #fb3 75%, #58a 0);
+		              lightgreen 25%, lightblue 0, lightblue 50%,
+		              lightgreen 0, lightgreen 75%, lightblue 0);
 		background-size: 42.4px 42.4px;
+	}
+	.div5 {
+		/*锯齿*/
+		background: linear-gradient(135deg, lightgreen 50%, lightblue 0);
+		background-size: 100% 30px;
 	}
 	</style>
 </head>
 <body>
-	<div></div>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+	<div class="div4"></div>
+	<div class="div5"></div>
 </body>
 </html>

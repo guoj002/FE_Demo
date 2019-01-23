@@ -10,15 +10,17 @@
 			border: 1px solid lightgray;
 			overflow: scroll;
 			position: relative;
+			background: lightgreen;
 		}
 		.div2 {
+			position: relative;
 			background-image: linear-gradient(to right top, #ffcc00 50%, #eee 50%);
-		    background-size: 100% calc(100% - 100px + 5px); /*减去一显示模块的高度，再加回要显示进度条的高度*/
+		    background-size: 100% calc(100% - 100px + 5px); /*减去显示模块的高度，再加回要显示进度条的高度*/
 		    background-repeat: no-repeat;
 		    z-index: 1;
 		}
-		/*.div2:after {
-			content: '';
+		.div1:after {
+			content: '222';
 			position: fixed;
 			top: 5px;
 			left: 0;
@@ -26,8 +28,8 @@
 			right: 0;
 			background: white;
 			z-index: -1;
-		}*/
-		.div1::after {
+		}
+/*		.div1::after {
 		    content: "1111";
 		    position: absolute;
 		    top: 5px;
@@ -36,7 +38,7 @@
 		    right: 0;
 		    background: #fff;
 		    z-index: -1;
-		}
+		}*/
 	</style>
 </head>
 <body>

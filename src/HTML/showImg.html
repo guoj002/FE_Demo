@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片预览</title>
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .container img {
+            margin: 10px;
+            width: 250px;
+            height: 250px;
+        }
+        .container img:focus {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        let imgArr = []
+        let page = 0
+        const size = 15
+        openFile = () => {
+            const container = document.getElementById('container')
+            const selectFiles = document.getElementById("selectFiles").files
+            for(let file of selectFiles){
+                const reader = new FileReader()
+                reader.readAsText(file)
+                reader.onload = function(){
+                    imgArr = reader.result.split("\n")
+                    imgArr.slice(0, size > imgArr.length ? imgArr.length : size).forEach(url => {
+                        const img = document.createElement('img')
+                        img.src = url
+                        container.appendChild(img)
+                    })
+                }
+            }
+        }
+        goto = flag => {
+            if (page + flag >= 0 && page + flag < imgArr.length/size) {
+                page = page + flag
+                const startPage = page * size > imgArr.length ? imgArr.length : page * size
+                const endPage = (page + 1) * size > imgArr.length ? imgArr.length : (page + 1) * size
+                document.getElementById('container').innerHTML = ''
+                imgArr.slice(startPage, endPage).forEach(url => {
+                    const img = document.createElement('img')
+                    img.src = url
+                    container.appendChild(img)
+                })
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="file" id="selectFiles" onchange="openFile()" />
+    <button onclick="goto(-1)"><-</button>
+    <button onclick="goto(1)">-></button>
+    <div class='container' id="container" />
+</body>
+</html>

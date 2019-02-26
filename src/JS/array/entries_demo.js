@@ -20,7 +20,7 @@
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var x = fruits.entries();
 
-console.log('o: ', x)
+console.log('o1: ', x)
 console.log('oo: ', x.next())
 console.log('a: ', x.next().value)
 console.log('b: ', x.next().value)

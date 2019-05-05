@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3位移translate()方法</title>
+    <style type="text/css">
+        #origin {
+			width: 200px;
+			height: 100px;
+            margin: 100px auto;
+            border:1px dashed silver;
+		}
+        #current {
+            width: 200px;
+            height: 100px;
+            background-color: #3EDFF4;
+            animation: mymove 5s infinite;
+        }
+        @keyframes mymove {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="origin">
+        <div id="current"></div>
+    </div>
+</body>
+</html>

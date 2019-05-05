@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .arrow{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin: 50px auto;
+            background: lightblue;
+            position: relative;
+        }
+        /* ----------------- */
+        .arrow1{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin: 50px auto;
+            background: lightblue;
+            position: relative;
+        }
+        .arrow1::before{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 10px;
+            border-color: transparent transparent transparent #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* border-left-color: #fff; */
+            z-index: 1;
+        }
+        .arrow1::after{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 10px;
+            border-color: transparent transparent transparent lightblue;
+            position: absolute;
+            top: 0;
+            left: auto;
+            right: -10px;
+            /* border-left-color: lightblue; */
+            z-index: 2;
+        }
+        /* ----------------- */
+        .arrow2{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin: 50px auto;
+            background: lightblue;
+            position: relative;
+        }
+        .arrow2:hover{
+            background: lightcyan;
+        }
+        .arrow2:hover::after{
+            border-left-color: lightcyan;
+        }
+        .arrow2::before{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 10px;
+            border-color: transparent transparent transparent #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .arrow2::after{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 10px;
+            border-color: transparent transparent transparent lightblue;
+            position: absolute;
+            top: 0;
+            left: auto;
+            right: -10px;
+            z-index: 2;
+        }
+        /* ----------------- */
+        .arrow3{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin: 50px auto;
+            background: lightblue;
+            position: relative;
+        }
+        .arrow3:hover{
+            background: lightcyan;
+        }
+        .arrow3::before{
+            content: '';
+            background: lightblue;
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 30px;
+            transform: skewX(-20deg);
+            top: 0;
+            left: -6px;
+            /* right: 0; */
+            z-index: -1;
+        }
+        .arrow3::after{
+            content: '';
+            background: lightblue;
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 30px;
+            transform: skewX(-20deg);
+            top: 0;
+            /* left: 0; */
+            right: -6px;
+            z-index: -1;
+        }
+        .arrow3:hover::before, .arrow3:hover::after{
+            background: lightcyan;
+        }
+        /* ----------------- */
+        .arrow6{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin: 50px auto;
+            background: lightblue;
+            position: relative;
+        }
+        .arrow6:hover::before{
+            content:'';
+            width: 120px;
+            height: 120px;
+            border: 5px solid red;
+            background: url(../../IMG/pcdongtai.gif) no-repeat;
+            background-size: 100% auto;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            z-index: 99999;
+        }
+        /* ----------------- */
+        .arrow4{
+            width: 50px;
+            height: 50px;
+            border-radius:100%;
+            border:1px solid #ccc;
+            background-color: #fff;
+            margin:50px auto;
+            position: relative;
+        }
+        .arrow4::before{
+            content: '';
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius:100%;
+            border:1px solid #ccc;
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            /* right: 0; */
+            z-index: -1;
+        }
+        .arrow4:hover::before{
+            background: lightpink;
+        }
+        /* ----------------- */
+        .arrow5{
+            width: 100px;
+            height: 100px;
+            border-radius:100%;
+            border:1px solid #ccc;
+            background-color: #fff;
+            margin:50px auto;
+            position: relative;
+        }
+        .arrow5::before{
+            content: '';
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius:100%;
+            border:1px solid #ccc;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            /* right: 0; */
+            /* z-index: -1; */
+        }
+        .arrow5:hover{
+            background: lightpink;
+        }
+        .arrow5:hover::before{
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="arrow">箭头模块</div>
+    <div class="arrow1">箭头模块</div>
+    <div class="arrow2">箭头模块</div>
+    <div class="arrow3">箭头模块</div>
+    <div class="arrow6">箭头模块</div>
+    <div class="arrow4"></div>
+    <div class="arrow5"></div>
+</body>
+</html>

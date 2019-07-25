@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const changeImage = () =>
+        {
+            element=document.getElementById('myimage')
+            if (element.src.match("2"))
+            {
+                element.src="../IMG/img3.jpeg";
+            }
+            else
+            {
+                element.src="../IMG/img2.jpeg";
+            }
+        }
+        </script>
+        <img id="myimage" onclick="changeImage()" border="0" src="../IMG/img2.jpeg" width="100" height="180">
+        <p>点击灯泡 开/关 灯</p>
+        
+</body>
+</html>

@@ -9,7 +9,7 @@ const obj = {
 
 const retrieveX = obj.getX
 
-console.log('retrieveX(): ', retrieveX())
+console.log('retrieveX(): ', retrieveX()) // node: undefined  bom: 44
 
 console.log('obj.getX(): ', obj.getX())
 

@@ -1,2 +1,2 @@
-let a = () =>{};
+let a = () => {};
 console.log(a.prototype); // undefined

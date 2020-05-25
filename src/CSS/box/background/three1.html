@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.bg {
+			width: 240px;
+			height: 240px;
+			border: 1px solid black;
+            position: relative;
+		}
+        .bg img {
+            width: 170px;
+			height: 240px;
+            margin-left: 50px;
+			background-repeat: no-repeat;
+			background-size: 170px 240px;
+			object-fit: contain;
+            object-position: bottom;
+        }
+        .bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url("../../../IMG/box/bg1.png");
+			background-repeat: no-repeat;
+			background-position: 0 0;  
+			background-size: 240px 240px;
+            z-index: -1;
+        }
+        .bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url("../../../IMG/box/bg0.png");
+			background-repeat: no-repeat;
+			background-position: 0 0;  
+			background-size: 240px 240px;
+            z-index: 1;
+        }
+	</style>
+</head>
+<body>
+	<div class="bg"><img src="../../../IMG/box/444.png" alt="" /></div>
+</body>
+</html>

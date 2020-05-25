@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http: //www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title>无标题页</title>
+        <style>
+            #wrap {
+                margin: auto;
+                padding: 8px;
+                text-align: center;
+                width: 880px;
+                height: 606px;
+            }
+            /*not for ie 6.0*/
+            html > body #wrap {
+                background: url(../css/img/background.png) no-repeat left top;
+            }
+            /*for ie 6.0*/
+            * html #wrap {
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src= "css/img/background.png" );
+                background: none;
+            }
+            #wrap a {
+                color: #c00;
+                text-decoration: none;
+                position: relative;
+            }
+            /*解决IE下链接失效的问题*/
+            #wrap a:hover {
+                text-decoration: underline;
+            } 
+        </style>
+        <link href="css /StyleSheet.css" rel="stylesheet"  type="text/css"/>
+    </head>
+
+    <body>
+        <form id="form1" runat="server">
+            <div id="wrap"></div>
+        </form>
+    </body>
+</html>
